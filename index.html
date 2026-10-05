@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="ResumIA: convierte cualquier PDF en un resumen claro en segundos con inteligencia artificial. Acceso anticipado gratis.">
+  <meta name="theme-color" content="#2563eb">
+
+  <!-- Open Graph / redes sociales -->
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="ResumIA | Resume cualquier PDF con IA">
+  <meta property="og:description" content="Convierte cualquier PDF en un resumen claro en segundos. Consigue tu acceso anticipado.">
+  <meta property="og:image" content="https://raw.githubusercontent.com/juanbarrero-art/landing-page-ia/main/assets/hero.svg">
+  <meta name="twitter:card" content="summary_large_image">
+  <title>ResumIA | Resume cualquier PDF con IA</title>
+
+  <!-- Favicon vectorial -->
+  <link rel="icon" type="image/svg+xml" href="assets/favicon.svg">
+  <!-- Hoja de estilos principal -->
+  <link rel="stylesheet" href="styles.css">
+  <!-- JavaScript diferido: se ejecuta tras parsear el HTML -->
+  <script src="script.js" defer></script>
+</head>
+<body>
+  <!-- Enlace para saltar al contenido (accesibilidad / teclado) -->
+  <a class="saltar-contenido" href="#contenido">Saltar al contenido principal</a>
+
+  <!-- ============ CABECERA ============ -->
+  <header class="cabecera">
+    <div class="contenedor cabecera__interior">
+      <a class="marca" href="#contenido" aria-label="ResumIA, inicio">
+        <img class="marca__logo" src="assets/favicon.svg" alt="" width="32" height="32" aria-hidden="true">
+        <span class="marca__nombre">ResumIA</span>
+      </a>
+
+      <nav class="cabecera__nav" aria-label="Navegación principal">
+        <a class="boton boton--primario" href="#registro">Acceso anticipado</a>
+      </nav>
+    </div>
+  </header>
+
+  <main id="contenido" tabindex="-1">
+    <!-- ============ HERO ============ -->
+    <section class="hero" aria-labelledby="hero-titulo">
+      <div class="contenedor hero__interior">
+        <div class="hero__texto">
+          <p class="hero__etiqueta">Beta abierta · Impulsado por IA</p>
+          <h1 class="hero__titulo" id="hero-titulo">
+            Convierte cualquier PDF en un resumen claro en segundos
+          </h1>
+          <p class="hero__subtitulo">
+            Sube tus documentos y deja que ResumIA extraiga lo esencial: ideas clave,
+            conclusiones y próximos pasos. Sin leer cientos de páginas.
+          </p>
+          <div class="hero__acciones">
+            <a class="boton boton--primario boton--grande" href="#registro">Probar gratis</a>
+            <a class="boton boton--fantasma" href="#beneficios">Ver beneficios</a>
+          </div>
+          <p class="hero__nota">Sin tarjeta de crédito · Cancela cuando quieras</p>
+        </div>
+
+        <figure class="hero__media">
+          <img class="hero__imagen" src="assets/hero.svg"
+               alt="Ilustración de un documento PDF que se transforma en un resumen con viñetas"
+               width="560" height="420" loading="eager" fetchpriority="high" decoding="async">
+        </figure>
+      </div>
+    </section>
+
+    <!-- ============ BENEFICIOS ============ -->
+    <section class="beneficios" id="beneficios" aria-labelledby="beneficios-titulo">
+      <div class="contenedor">
+        <h2 class="titulo-seccion" id="beneficios-titulo">¿Por qué ResumIA?</h2>
+        <p class="subtitulo-seccion">Menos tiempo leyendo, más tiempo decidiendo.</p>
+
+        <ul class="beneficios__lista" role="list">
+          <li class="tarjeta-beneficio">
+            <span class="tarjeta-beneficio__icono" aria-hidden="true">
+              <svg viewBox="0 0 24 24" width="28" height="28" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M13 2 3 14h7l-1 8 10-12h-7l1-8z"/></svg>
+            </span>
+            <h3 class="tarjeta-beneficio__titulo">Rápido</h3>
+            <p class="tarjeta-beneficio__texto">Resúmenes en menos de 10 segundos, incluso en documentos extensos.</p>
+          </li>
+
+          <li class="tarjeta-beneficio">
+            <span class="tarjeta-beneficio__icono" aria-hidden="true">
+              <svg viewBox="0 0 24 24" width="28" height="28" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2 4 5v6c0 5 3.5 8.5 8 11 4.5-2.5 8-6 8-11V5l-8-3z"/><path d="m9 12 2 2 4-4"/></svg>
+            </span>
+            <h3 class="tarjeta-beneficio__titulo">Preciso</h3>
+            <p class="tarjeta-beneficio__texto">Conserva el contexto y las ideas clave sin inventar ni perder matices.</p>
+          </li>
+
+          <li class="tarjeta-beneficio">
+            <span class="tarjeta-beneficio__icono" aria-hidden="true">
+              <svg viewBox="0 0 24 24" width="28" height="28" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="11" width="18" height="10" rx="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/></svg>
+            </span>
+            <h3 class="tarjeta-beneficio__titulo">Privado</h3>
+            <p class="tarjeta-beneficio__texto">Tus documentos se procesan de forma segura y no se comparten con terceros.</p>
+          </li>
+        </ul>
+      </div>
+    </section>
+
+    <!-- ============ FORMULARIO DE CAPTURA ============ -->
+    <section class="registro" id="registro" aria-labelledby="registro-titulo">
+      <div class="contenedor registro__interior">
+        <div class="registro__texto">
+          <h2 class="titulo-seccion" id="registro-titulo">Consigue tu acceso anticipado</h2>
+          <p class="subtitulo-seccion">Déjanos tus datos y te avisamos en cuanto abramos tu cupo.</p>
+        </div>
+
+        <!-- Formulario con validación propia (novalidate para controlar los mensajes) -->
+        <form class="formulario" id="formulario" novalidate>
+          <!-- Nombre -->
+          <div class="campo">
+            <label class="campo__etiqueta" for="nombre">Nombre <span aria-hidden="true">*</span></label>
+            <input class="campo__control" type="text" id="nombre" name="nombre"
+                   autocomplete="name" required aria-describedby="error-nombre">
+            <p class="campo__error" id="error-nombre" role="alert" hidden></p>
+          </div>
+
+          <!-- Email -->
+          <div class="campo">
+            <label class="campo__etiqueta" for="email">Correo electrónico <span aria-hidden="true">*</span></label>
+            <input class="campo__control" type="email" id="email" name="email"
+                   autocomplete="email" required aria-describedby="error-email">
+            <p class="campo__error" id="error-email" role="alert" hidden></p>
+          </div>
+
+          <!-- Interés / rol -->
+          <div class="campo">
+            <label class="campo__etiqueta" for="rol">¿Cuál es tu perfil? <span aria-hidden="true">*</span></label>
+            <select class="campo__control" id="rol" name="rol" required aria-describedby="error-rol">
+              <option value="">Selecciona una opción…</option>
+              <option value="estudiante">Estudiante</option>
+              <option value="docente">Docente</option>
+              <option value="profesional">Profesional</option>
+              <option value="investigador">Investigador</option>
+              <option value="otro">Otro</option>
+            </select>
+            <p class="campo__error" id="error-rol" role="alert" hidden></p>
+          </div>
+
+          <!-- Consentimiento -->
+          <div class="campo campo--check">
+            <input class="campo__check" type="checkbox" id="consentimiento" name="consentimiento"
+                   required aria-describedby="error-consentimiento">
+            <label class="campo__etiqueta campo__etiqueta--check" for="consentimiento">
+              Acepto recibir novedades de ResumIA y la <a href="#privacidad">política de privacidad</a>. <span aria-hidden="true">*</span>
+            </label>
+          </div>
+          <p class="campo__error" id="error-consentimiento" role="alert" hidden></p>
+
+          <button class="boton boton--primario boton--grande boton--bloque" type="submit">
+            Quiero mi acceso
+          </button>
+        </form>
+
+        <!-- Mensaje de éxito (se muestra al enviar correctamente) -->
+        <div class="formulario__exito" id="mensaje-exito" role="status" tabindex="-1" hidden>
+          <p class="formulario__exito-texto">¡Listo! 🎉 Te avisaremos en cuanto tu acceso esté disponible.</p>
+          <button class="boton boton--fantasma" type="button" id="reiniciar">Enviar otra respuesta</button>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ PRIVACIDAD (demo) ============ -->
+    <section class="privacidad" id="privacidad" aria-labelledby="privacidad-titulo">
+      <div class="contenedor">
+        <h2 class="privacidad__titulo" id="privacidad-titulo">Privacidad</h2>
+        <p class="privacidad__texto">
+          Proyecto de demostración: los datos del formulario <strong>no se envían ni se almacenan</strong>
+          en ningún servidor; toda la validación ocurre en tu navegador.
+        </p>
+      </div>
+    </section>
+  </main>
+
+  <!-- ============ FOOTER ============ -->
+  <footer class="pie">
+    <div class="contenedor pie__interior">
+      <p class="pie__marca">ResumIA</p>
+      <p class="pie__texto">Proyecto de demostración · Landing page creada con IA.</p>
+      <p class="pie__copy">© <span id="anio">2026</span> ResumIA. Todos los derechos reservados.</p>
+    </div>
+  </footer>
+</body>
+</html>
