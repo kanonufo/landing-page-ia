@@ -117,8 +117,8 @@ Google Fonts (Lora + Inter) en lugar de la pila del sistema.
 
 ## Evidencias de la Fase 1 (checklist)
 
-- [ ] Capturas de la sesión de AI Studio (Prompt P1) — si el chat no se guardó, re-ejecutar y capturar
-- [ ] Capturas de la sesión de AI Studio (Prompt P2) — si el chat no se guardó, re-ejecutar y capturar
+- [x] Capturas de la sesión de AI Studio (Prompt P1) → `docs/capturas/ai_studio_p1_brief.png`
+- [x] Capturas de la sesión de AI Studio (Prompt P2) → `docs/capturas/ai_studio_p2_buyer.png`
 - [x] Respuestas pegadas en este documento
 - [ ] Boceto de baja fidelidad (`docs/boceto_planificacion.png`)
 - [ ] Documento de planificación exportado a PDF/Word para el ZIP
