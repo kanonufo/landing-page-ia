@@ -29,8 +29,9 @@ a ResumIA. Un único objetivo de conversión: registrarse en el formulario.
 - Código generado con IA (documentar prompts en `docs/prompts.md`).
 
 ## Paleta y estilo
-- Azul `#2563eb` (primario) y violeta `#7c3aed` (acento).
-- Fondo claro, tarjetas con sombras suaves, tipografía del sistema.
+- Azul `#2563eb` (primario) y naranja `#f59e0b` (acento) — identidad final de la Unidad 2.
+- Tipografías Lora (títulos) e Inter (cuerpo).
+- Fondo claro, tarjetas con sombras suaves.
 
 ## Wireframe (texto)
 ```
