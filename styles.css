@@ -5,14 +5,14 @@
 
 /* ---------- Variables de diseño ---------- */
 :root {
-  /* Colores */
+  /* Colores (brief creativo, Prompt P1) */
   --color-primario: #2563eb;
   --color-primario-oscuro: #1d4ed8;
-  --color-acento: #7c3aed;
-  --color-texto: #0f172a;
+  --color-acento: #f59e0b;
+  --color-texto: #334155;
   --color-texto-suave: #475569;
   --color-fondo: #ffffff;
-  --color-fondo-alt: #f1f5f9;
+  --color-fondo-alt: #f8fafc;
   --color-borde: #e2e8f0;
   --color-borde-fuerte: #64748b;
   --color-error: #dc2626;
@@ -32,7 +32,11 @@
   --sombra-fuerte: 0 18px 50px rgba(37, 99, 235, 0.25);
 
   /* Tipografía */
-  --fuente: system-ui, -apple-system, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+  --fuente-titulos: "Lora", Georgia, serif;
+  --fuente-cuerpo: "Inter", system-ui, -apple-system, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+
+  /* Transiciones (microinteracciones 150–400 ms) */
+  --transicion: background-color 0.3s ease, color 0.3s ease, transform 0.3s ease, box-shadow 0.3s ease;
 }
 
 /* ---------- Reset básico ---------- */
@@ -48,11 +52,18 @@ html {
 
 body {
   margin: 0;
-  font-family: var(--fuente);
+  font-family: var(--fuente-cuerpo);
   color: var(--color-texto);
   background: var(--color-fondo);
   line-height: 1.6;
   -webkit-font-smoothing: antialiased;
+}
+
+/* Titulares con la fuente serif del brief */
+h1,
+h2,
+h3 {
+  font-family: var(--fuente-titulos);
 }
 
 img {
@@ -85,12 +96,14 @@ img {
   left: 0;
 }
 
-/* Foco visible accesible en todos los interactivos (WCAG 2.4.7) */
+/* Foco visible accesible en todos los interactivos (WCAG 2.4.7).
+   Se usa el azul oscuro y no el naranja de acento porque el naranja no
+   alcanza 3:1 de contraste sobre fondo blanco. */
 a:focus-visible,
 button:focus-visible,
 input:focus-visible,
 select:focus-visible {
-  outline: 3px solid var(--color-acento);
+  outline: 3px solid var(--color-primario-oscuro);
   outline-offset: 2px;
 }
 
@@ -170,10 +183,42 @@ select:focus-visible {
   height: 32px;
 }
 
+/* Navegación principal (menú de anclas + CTA secundario) */
+.cabecera__nav {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+.cabecera__menu {
+  display: none; /* en móvil se prioriza el CTA; el menú aparece desde 768px */
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  gap: 1.1rem;
+  font-size: 0.9rem;
+}
+
+.cabecera__enlace {
+  color: var(--color-texto);
+  text-decoration: none;
+  transition: var(--transicion);
+}
+
+.cabecera__enlace:hover {
+  color: var(--color-primario);
+  text-decoration: underline;
+}
+
+/* El CTA secundario se mantiene siempre visible en la cabecera */
+.cabecera__boton {
+  display: inline-block;
+}
+
 /* ---------- Hero ---------- */
 .hero {
   background:
-    radial-gradient(1000px 400px at 85% -10%, rgba(124, 58, 237, 0.15), transparent),
+    radial-gradient(1000px 400px at 85% -10%, rgba(245, 158, 11, 0.14), transparent),
     radial-gradient(900px 380px at 0% 0%, rgba(37, 99, 235, 0.12), transparent),
     var(--color-fondo-alt);
   padding: var(--espacio-xl) 0;
@@ -287,6 +332,103 @@ select:focus-visible {
   color: var(--color-texto-suave);
 }
 
+/* ---------- Testimonios (prueba social) ---------- */
+.testimonios {
+  padding: var(--espacio-xl) 0;
+  background: var(--color-fondo-alt);
+}
+
+.testimonios__lista {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: grid;
+  gap: var(--espacio-lg);
+  grid-template-columns: 1fr;
+}
+
+.tarjeta-testimonio {
+  margin: 0;
+  padding: var(--espacio-lg);
+  background: var(--color-fondo);
+  border: 1px solid var(--color-borde);
+  border-radius: var(--radio);
+  box-shadow: var(--sombra);
+}
+
+.tarjeta-testimonio__texto {
+  margin: 0 0 var(--espacio-md);
+  padding-left: 1rem;
+  border-left: 4px solid var(--color-acento);
+}
+
+.tarjeta-testimonio__texto p {
+  margin: 0;
+}
+
+.tarjeta-testimonio__autor {
+  display: flex;
+  flex-direction: column;
+  margin: 0;
+}
+
+.tarjeta-testimonio__nombre {
+  font-weight: 600;
+}
+
+.tarjeta-testimonio__cargo {
+  font-size: 0.9rem;
+  color: var(--color-texto-suave);
+}
+
+/* ---------- ¿Cómo funciona? (sección libre) ---------- */
+.como-funciona {
+  padding: var(--espacio-xl) 0;
+}
+
+.como-funciona__pasos {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: grid;
+  gap: var(--espacio-lg);
+  grid-template-columns: 1fr;
+}
+
+.paso {
+  text-align: center;
+}
+
+.paso__numero {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 44px;
+  height: 44px;
+  margin-bottom: var(--espacio-sm);
+  font-weight: 700;
+  color: #1e293b;
+  background: var(--color-acento);
+  border-radius: 999px;
+}
+
+.paso__titulo {
+  margin: 0 0 0.35rem;
+  font-size: 1.15rem;
+}
+
+.paso__texto {
+  margin: 0;
+  color: var(--color-texto-suave);
+}
+
+.como-funciona__cierre {
+  margin: var(--espacio-lg) 0 0;
+  text-align: center;
+  color: var(--color-texto-suave);
+  font-style: italic;
+}
+
 /* ---------- Registro / formulario ---------- */
 .registro {
   padding: var(--espacio-xl) 0;
@@ -341,6 +483,12 @@ select:focus-visible {
 .campo__error {
   margin: 0.35rem 0 0;
   font-size: 0.85rem;
+  color: var(--color-error);
+}
+
+/* El error no depende solo del color: icono + texto (WCAG 1.4.1) */
+.campo__error::before {
+  content: "⚠ ";
   color: var(--color-error);
 }
 
@@ -434,7 +582,19 @@ main[id] {
 /* =====================================================================
    Media queries (progressive enhancement para pantallas mayores)
    ===================================================================== */
+
+/* Móvil grande: 2 columnas de beneficios */
+@media (min-width: 480px) {
+  .beneficios__lista {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
 @media (min-width: 768px) {
+  .cabecera__menu {
+    display: flex;
+  }
+
   .hero__interior {
     grid-template-columns: 1.1fr 0.9fr;
     gap: var(--espacio-xl);
@@ -444,8 +604,42 @@ main[id] {
     grid-template-columns: repeat(3, 1fr);
   }
 
+  .testimonios__lista {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .como-funciona__pasos {
+    grid-template-columns: repeat(3, 1fr);
+  }
+
   .campo--check {
     margin-bottom: var(--espacio-sm);
+  }
+}
+
+@media (min-width: 1200px) {
+  .contenedor {
+    max-width: 1140px;
+  }
+
+  .hero,
+  .testimonios,
+  .como-funciona {
+    padding: 5rem 0;
+  }
+}
+
+/* Microinteracciones (150–400 ms), solo si el usuario acepta movimiento */
+@media (prefers-reduced-motion: no-preference) {
+  .tarjeta-beneficio,
+  .tarjeta-testimonio {
+    transition: transform 0.4s ease, box-shadow 0.4s ease;
+  }
+
+  .tarjeta-beneficio:hover,
+  .tarjeta-testimonio:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 16px 40px rgba(15, 23, 42, 0.15);
   }
 }
 
