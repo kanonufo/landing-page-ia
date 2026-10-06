@@ -34,8 +34,10 @@ Abre `index.html` en el navegador (no necesita servidor ni build).
 ├── styles.css          # Estilos (mobile-first, BEM)
 ├── script.js           # Validación del formulario (vanilla)
 ├── assets/
-│   ├── hero.svg        # Ilustración del hero
-│   └── favicon.svg     # Icono del sitio
+│   ├── images/
+│   │   └── hero.svg    # Ilustración del hero
+│   └── icons/
+│       └── favicon.svg # Icono del sitio
 ├── docs/
 │   ├── brief.md        # Brief del proyecto
 │   └── prompts.md      # Biblioteca de prompts usados
