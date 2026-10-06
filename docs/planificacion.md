@@ -18,33 +18,36 @@ acceso anticipado (beta). *(Pendiente: validar redacción con la salida de AI St
 
 ## 2. Buyer persona
 
-Respuesta seleccionada de Google AI Studio (Prompt P2):
+Respuesta seleccionada de Google AI Studio (Prompt P2, ejecución con evidencia;
+la primera ejecución no quedó guardada en AI Studio y el prompt se repitió):
 
 | Campo | Valor |
 |---|---|
-| Nombre ficticio | Valentina Ríos |
+| Nombre ficticio | Elena Vázquez |
 | Edad | 28 años |
-| Ocupación | Estudiante de maestría en Educación y asistente de investigación universitaria |
-| Dolor principal | "Tengo más de 20 PDFs académicos pendientes esta semana y paso horas leyendo paja solo para descubrir que la mitad no me servía para mi tesis." |
-| Deseo principal | Filtrar e identificar en minutos los aportes reales de cada documento para enfocar su tiempo en analizar, redactar y avanzar con su investigación. |
-| Objeción más común | "Seguro me van a llenar la bandeja de spam o la beta terminará siendo una prueba corta que luego me pida tarjeta de crédito." → Se desmonta con: "Tu correo solo se usará para enviarte tu invitación prioritaria a la beta gratuita, sin pedir datos de pago ni enviarte promociones innecesarias." |
+| Ocupación | Estudiante de doctorado en Ciencias Sociales |
+| Dolor principal | "Siento que paso más tiempo intentando digerir montañas de PDFs que realmente analizando o escribiendo mis conclusiones". |
+| Deseo principal | Identificar los argumentos críticos de un texto en minutos para decidir si merece una lectura profunda. |
+| Objeción más común | "Me da miedo que la IA simplifique demasiado el contenido y pierda los matices teóricos esenciales." → Se desmonta con: "ResumIA no reemplaza tu lectura, sino que actúa como un mapa de navegación que resalta las ideas clave para que tú decidas qué profundizar con tu criterio académico." |
 
-Motivación principal: recuperar tiempo valioso sustituyendo la lectura exploratoria
-de textos extensos por un filtrado inteligente y riguroso.
+Motivación principal: recuperar el control sobre su tiempo de investigación,
+delegando la tarea mecánica de procesamiento a la IA para centrar su energía
+intelectual en la síntesis y la creación de conocimiento nuevo.
 
-Implicaciones para el copy (Fase 2): el hero ya incluye "Sin tarjeta de crédito ·
-Cancela cuando quieras" (responde a la objeción); se reforzará el mensaje de
-privacidad del formulario con la respuesta textual a la objeción.
+Implicaciones para el copy (Fase 2): la respuesta a la objeción ("no reemplaza tu
+lectura, es un mapa") se usará como microcopy en la sección "¿Cómo funciona?";
+el hero mantiene "Sin tarjeta de crédito · Cancela cuando quieras" y se añadirá
+bajo el CTA el microcopy anti-fricción sugerido en P3.
 
 ## 3. Secciones de la landing (7 obligatorias + 1 libre)
 
 | N | Sección | Contenido específico de ResumIA | Estado |
 |---|---|---|---|
 | 1 | Header | Logo ResumIA + menú de anclas (Beneficios · Cómo funciona · Testimonios) + CTA secundario "Acceso anticipado" | Existe; falta el menú de anclas |
-| 2 | Hero | H1 con propuesta de valor, subtítulo, descripción breve, CTA "Probar gratis" e ilustración | Existe |
-| 3 | Beneficios | Mínimo 4 beneficios con icono, título y descripción (Rápido, Preciso, Privado + 1–2 nuevos) | Existen 3; faltan 1–2 |
-| 4 | Testimonios (prueba social) | 2 testimonios verosímiles con nombre, cargo/ciudad y texto | Falta (se genera en Fase 2) |
-| 5 | Sección libre: **¿Cómo funciona?** | 3 pasos: Sube tu PDF → La IA lo analiza → Recibe tu resumen | Falta (se genera en Fase 2) |
+| 2 | Hero | H1 de P3: "Domina tu bibliografía: sintetiza PDFs complejos en minutos" + subtítulo, descripción breve, CTA "Reservar mi lugar ahora" e ilustración | Existe; copy de P3 pendiente de integrar |
+| 3 | Beneficios | 5 beneficios generados en P3 (Acelera tu ritmo · Extrae rigor académico · Protege tu investigación · Recupera tus horas · Simplifica tu flujo) | Copy listo (P3); pendiente integrar |
+| 4 | Testimonios (prueba social) | 2 testimonios verosímiles con nombre, cargo/ciudad y texto | Copy generado en P3; pendiente integrar |
+| 5 | Sección libre: **¿Cómo funciona?** | 3 pasos: Sube tu PDF → La IA lo analiza → Recibe tu resumen | Pendiente copy (P6) e integrar |
 | 6 | Formulario de captura | Nombre, correo, perfil y consentimiento, con validación y mensaje de éxito | Existe |
 | 7 | Footer | Nombre del proyecto, aviso de privacidad y año dinámico | Existe |
 
@@ -81,32 +84,34 @@ Referencia textual (wireframe actual, a reemplazar por el boceto):
 
 ## 5. Brief creativo con IA
 
-Respuesta de Google AI Studio (Prompt P1). Paleta adoptada para el proyecto y
-que se aplicará en la Fase 3 (CSS):
+Respuesta de Google AI Studio (Prompt P1, ejecución con evidencia; la primera
+ejecución no quedó guardada y el prompt se repitió). Paleta adoptada para el
+proyecto y que se aplicará en la Fase 3 (CSS):
 
 | Rol | Color | HEX | Justificación |
 |---|---|---|---|
-| Primario | Azul índigo | `#1E293B` | Seriedad académica y rigor, confianza sin verse anticuado |
-| Secundario | Azul intelectual | `#2563EB` | Personalidad tecnológica SaaS; guía la navegación |
-| Acento | Verde | `#047857` (CTA) / `#10B981` (gráficos) | Energía, síntesis; contraste 4.6:1 sobre blanco en el CTA |
-| Fondo | Blanco hueso | `#F8FAFC` | Reduce fatiga visual en textos largos |
-| Texto | Gris grafito | `#0F172A` | Nitidez sin el contraste estridente del negro puro |
+| Primario | Azul inteligencia | `#2563EB` | Confianza, tecnología y claridad mental |
+| Secundario | Azul profundo | `#1E293B` | Seriedad y profundidad; ideal para texto principal |
+| Acento | Naranja energía | `#F59E0B` | Contraste vibrante para el botón CTA |
+| Fondo | Blanco académico | `#F8FAFC` | Reduce la fatiga visual en lecturas largas |
+| Texto | Gris carbón | `#334155` | Menos agresivo que el negro puro, buena legibilidad |
 
-Tipografías — **seleccionada la Opción A** (mayor afinidad con un producto
-tecnológico; máximo 2 familias permitidas):
+Tipografías — **seleccionada la Opción B** (refuerza el tono académico e
+intelectual del producto; máximo 2 familias permitidas):
 
-- **Opción A (seleccionada):** títulos **Plus Jakarta Sans** (600/700); cuerpo **Inter** (400/500).
-- Opción B (descartada): títulos Lora (500/700); cuerpo Source Sans 3 (400/600) — muy editorial para un SaaS.
+- **Opción B (seleccionada):** títulos **Lora** (Bold 700) — serif editorial con matiz académico; cuerpo **Inter** (Regular 400) — legibilidad impecable en párrafos.
+- Opción A (descartada): Inter (700) en títulos e Inter (400) en cuerpo — correcta pero genérica.
 
-Tono: **clarificador, riguroso y empático**. Titular de ejemplo propuesto:
-"De 50 páginas a lo esencial en segundos. Transforma textos densos en ideas
-clave, conclusiones y próximos pasos claros sin perder el rigor de tu investigación."
+Tono: **inteligente, metódico y estimulante**. Titular de ejemplo:
+"Domina tu lectura académica sin perder horas: transforma documentos densos en
+el conocimiento que realmente importa."
 
-Contraste verificado por la IA (se reverificará con WebAIM en Fase 3):
-texto `#0F172A` sobre `#F8FAFC` ≈ 15.8:1; blanco sobre acento `#047857` ≈ 4.6:1.
+Contraste declarado por la IA (se reverificará con WebAIM en Fase 3):
+texto `#334155` sobre `#F8FAFC` ≈ 9.5:1; blanco sobre botón `#2563EB` ≈ 5.2:1.
 
-Cambios respecto al diseño actual: el acento pasa de violeta `#7c3aed` a verde
-`#047857`/`#10B981`, y se incorporan las 2 fuentes de Google (hoy pila del sistema).
+Cambios respecto al diseño actual: el acento pasa de violeta `#7c3aed` a naranja
+`#F59E0B`, el primario se mantiene en `#2563EB`, y se incorporan 2 familias de
+Google Fonts (Lora + Inter) en lugar de la pila del sistema.
 
 ---
 
