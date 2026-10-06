@@ -4,8 +4,8 @@ Evidencia del proceso de creación asistida por IA (Google AI Studio / Gemini).
 Regla del entregable: **no se aceptan capturas de chat sin transcripción**; este
 documento transcribe cada prompt completo y registra las decisiones tomadas.
 
-Estado: **borrador de trabajo**. Las observaciones se afinan con cada fase
-(deben explicar por qué se aceptó, modificó o rechazó cada respuesta).
+Estado: **versión final**. Cada observación explica por qué se aceptó,
+modificó o rechazó la respuesta de la IA.
 
 Leyenda de fases: F1 = planificación · F2 = copy/HTML · F3 = CSS · F4 = JS · F5 = publicación.
 
