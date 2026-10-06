@@ -13,3 +13,6 @@ Thumbs.db
 
 # Material del curso (no forma parte del entregable)
 Electiva*.pdf
+
+# Empaquetado de entrega
+*.zip

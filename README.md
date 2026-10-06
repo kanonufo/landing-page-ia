@@ -54,8 +54,11 @@ con HTML5, CSS3 y JavaScript vanilla, usando Google AI Studio (Gemini) como asis
 │   ├── images/hero.svg         # Ilustración del hero
 │   └── icons/favicon.svg       # Icono del sitio
 ├── docs/
-│   ├── diario_prompts.md       # Diario de prompts (21 documentados)
+│   ├── DiarioDePrompts.pdf     # Diario de prompts (entregable)
+│   ├── ReflexionCritica.pdf    # Reflexión personal (entregable)
+│   ├── diario_prompts.md       # Fuente del diario (21 prompts)
 │   ├── planificacion.md        # Buyer persona, brief creativo y secciones
+│   ├── boceto_planificacion.png / .md
 │   ├── brief.md, prompts.md    # Material de trabajo de la Unidad 1
 │   └── capturas/               # Evidencias (vistas, W3C, Lighthouse, formulario, AI Studio)
 └── README.md

@@ -57,9 +57,10 @@ mantiene como contenido de apoyo dentro del footer o sección propia informativa
 
 ## 4. Boceto de baja fidelidad
 
-> Pendiente: dibujo a mano alzada (fotografiado) o Figma →
-> `docs/boceto_planificacion.png`.
-> Si se hace en Figma, suma +3 puntos al criterio de diseño.
+Realizado como **wireframe digital de baja fidelidad**:
+
+- `docs/boceto_planificacion.png` — versión gráfica (8 secciones, paleta y tipografías).
+- `docs/boceto_planificacion.md` — versión texto con el esquema en ASCII.
 
 Referencia textual (wireframe actual, a reemplazar por el boceto):
 
@@ -120,5 +121,5 @@ Google Fonts (Lora + Inter) en lugar de la pila del sistema.
 - [x] Capturas de la sesión de AI Studio (Prompt P1) → `docs/capturas/ai_studio_p1_brief.png`
 - [x] Capturas de la sesión de AI Studio (Prompt P2) → `docs/capturas/ai_studio_p2_buyer.png`
 - [x] Respuestas pegadas en este documento
-- [ ] Boceto de baja fidelidad (`docs/boceto_planificacion.png`)
-- [ ] Documento de planificación exportado a PDF/Word para el ZIP
+- [x] Boceto de baja fidelidad (`docs/boceto_planificacion.png`)
+- [x] Documento de planificación incluido en el ZIP (versión markdown en `docs/`)
