@@ -43,11 +43,11 @@ bajo el CTA el microcopy anti-fricción sugerido en P3.
 
 | N | Sección | Contenido específico de ResumIA | Estado |
 |---|---|---|---|
-| 1 | Header | Logo ResumIA + menú de anclas (Beneficios · Cómo funciona · Testimonios) + CTA secundario "Acceso anticipado" | Existe; falta el menú de anclas |
-| 2 | Hero | H1 de P3: "Domina tu bibliografía: sintetiza PDFs complejos en minutos" + subtítulo, descripción breve, CTA "Reservar mi lugar ahora" e ilustración | Existe; copy de P3 pendiente de integrar |
-| 3 | Beneficios | 5 beneficios generados en P3 (Acelera tu ritmo · Extrae rigor académico · Protege tu investigación · Recupera tus horas · Simplifica tu flujo) | Copy listo (P3); pendiente integrar |
-| 4 | Testimonios (prueba social) | 2 testimonios verosímiles con nombre, cargo/ciudad y texto | Copy generado en P3; pendiente integrar |
-| 5 | Sección libre: **¿Cómo funciona?** | 3 pasos: Sube tu PDF → La IA lo analiza → Recibe tu resumen | Pendiente copy (P6) e integrar |
+| 1 | Header | Logo ResumIA + menú de anclas (Beneficios · Cómo funciona · Testimonios) + CTA secundario "Acceso anticipado" | Integrado |
+| 2 | Hero | H1 final (P5): "Resume PDFs complejos en minutos, no horas" + subtítulo de P3 + CTA "Reservar mi lugar ahora" + microcopy anti-fricción | Integrado |
+| 3 | Beneficios | 5 beneficios integrados (Acelera tu ritmo · Extrae rigor académico · Protege tu investigación · Filtra tu bibliografía · Optimiza tu flujo) | Integrado (P3+P5) |
+| 4 | Testimonios (prueba social) | Testimonios recomendados en P4 (Valentina R., posgrado/Madrid; Javier M., analista/CDMX) con datos cuantificables | Integrado (P4) |
+| 5 | Sección libre: **¿Cómo funciona?** | 3 pasos (P6) + frase de cierre que responde a la objeción de Elena | Integrado (P6) |
 | 6 | Formulario de captura | Nombre, correo, perfil y consentimiento, con validación y mensaje de éxito | Existe |
 | 7 | Footer | Nombre del proyecto, aviso de privacidad y año dinámico | Existe |
 
