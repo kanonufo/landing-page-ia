@@ -159,6 +159,17 @@ select:focus-visible {
   -webkit-backdrop-filter: blur(8px);
   backdrop-filter: blur(8px);
   border-bottom: 1px solid var(--color-borde);
+  transition: background-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+/* Cabecera reducida cuando el usuario baja más de 80px (P12) */
+.cabecera--scrolled {
+  background: #ffffff;
+  box-shadow: 0 6px 24px rgba(15, 23, 42, 0.08);
+}
+
+.cabecera--scrolled .cabecera__interior {
+  min-height: 54px;
 }
 
 .cabecera__interior {
@@ -166,6 +177,7 @@ select:focus-visible {
   align-items: center;
   justify-content: space-between;
   min-height: 64px;
+  transition: min-height 0.3s ease;
 }
 
 .marca {
@@ -666,6 +678,18 @@ main[id] {
   scroll-margin-top: 5rem;
 }
 
+/* ---------- Animaciones de aparición (solo con JS activo) ---------- */
+.js .animate-on-scroll {
+  opacity: 0;
+  transform: translateY(24px);
+  transition: opacity 0.5s ease-out, transform 0.5s ease-out;
+}
+
+.js .animate-on-scroll.is-visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
 /* =====================================================================
    Media queries (progressive enhancement para pantallas mayores)
    ===================================================================== */
@@ -751,5 +775,10 @@ main[id] {
 
   * {
     transition: none !important;
+  }
+
+  .js .animate-on-scroll {
+    opacity: 1;
+    transform: none;
   }
 }

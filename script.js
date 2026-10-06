@@ -147,4 +147,60 @@
   if (anio) {
     anio.textContent = String(new Date().getFullYear());
   }
+
+  // =====================================================================
+  // Animaciones de aparición y cabecera con scroll (P12)
+  // =====================================================================
+
+  // Marca que JS está activo: habilita los estados iniciales de animación.
+  document.documentElement.classList.add("js");
+
+  // Muestra las secciones .animate-on-scroll al entrar al viewport.
+  function iniciarObservadorScroll() {
+    const secciones = document.querySelectorAll(".animate-on-scroll");
+
+    // Sin soporte de IntersectionObserver: se muestran todas directamente.
+    if (!("IntersectionObserver" in window)) {
+      secciones.forEach(function (seccion) {
+        seccion.classList.add("is-visible");
+      });
+      return;
+    }
+
+    const observador = new IntersectionObserver(
+      function (entradas, obs) {
+        entradas.forEach(function (entrada) {
+          if (entrada.isIntersecting) {
+            entrada.target.classList.add("is-visible");
+            obs.unobserve(entrada.target); // animar una sola vez
+          }
+        });
+      },
+      { threshold: 0.15 }
+    );
+
+    secciones.forEach(function (seccion) {
+      observador.observe(seccion);
+    });
+  }
+
+  // Añade .cabecera--scrolled cuando el scroll supera 80 px.
+  function iniciarEfectoHeader() {
+    const cabecera = document.querySelector(".cabecera");
+    if (!cabecera) return;
+
+    function manejarScroll() {
+      if (window.scrollY > 80) {
+        cabecera.classList.add("cabecera--scrolled");
+      } else {
+        cabecera.classList.remove("cabecera--scrolled");
+      }
+    }
+
+    manejarScroll(); // estado correcto si se recarga con scroll
+    window.addEventListener("scroll", manejarScroll, { passive: true });
+  }
+
+  iniciarObservadorScroll();
+  iniciarEfectoHeader();
 })();
