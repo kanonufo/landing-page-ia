@@ -209,6 +209,47 @@
     window.addEventListener("scroll", manejarScroll, { passive: true });
   }
 
+  /* =====================  Tema claro/oscuro (P15)  ===================== */
+
+  // Aplica el tema y sincroniza el botón (aria-pressed, aria-label e icono).
+  function aplicarTema(tema, boton) {
+    document.documentElement.setAttribute("data-tema", tema);
+    boton.setAttribute("aria-pressed", tema === "oscuro" ? "true" : "false");
+    boton.setAttribute("aria-label", tema === "oscuro" ? "Activar modo claro" : "Activar modo oscuro");
+    boton.textContent = tema === "oscuro" ? "☀️" : "🌙";
+  }
+
+  // Tema inicial: preferencia guardada o, si no hay, la del sistema.
+  function obtenerTemaInicial() {
+    let guardado = null;
+    try {
+      guardado = localStorage.getItem("tema");
+    } catch (e) {
+      guardado = null; // almacenamiento no disponible: se usa el sistema
+    }
+    if (guardado === "oscuro" || guardado === "claro") return guardado;
+    return window.matchMedia("(prefers-color-scheme: dark)").matches ? "oscuro" : "claro";
+  }
+
+  // Inicializa el conmutador de tema del encabezado.
+  function iniciarTema() {
+    const boton = document.querySelector(".tema-toggle");
+    if (!boton) return;
+
+    aplicarTema(obtenerTemaInicial(), boton);
+
+    boton.addEventListener("click", () => {
+      const esOscuro = document.documentElement.getAttribute("data-tema") === "oscuro";
+      const nuevoTema = esOscuro ? "claro" : "oscuro";
+      aplicarTema(nuevoTema, boton);
+      try {
+        localStorage.setItem("tema", nuevoTema);
+      } catch (e) {
+        // Sin persistencia disponible: el tema se mantiene solo en la sesión.
+      }
+    });
+  }
+
   /* =====================  Arranque  ===================== */
 
   // Marca que JS está activo: habilita los estados iniciales de animación.
@@ -218,4 +259,5 @@
   actualizarAnio();
   iniciarObservadorScroll();
   iniciarEfectoHeader();
+  iniciarTema();
 })();

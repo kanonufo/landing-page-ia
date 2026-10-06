@@ -39,6 +39,21 @@
   --transicion: background-color 0.3s ease, color 0.3s ease, transform 0.3s ease, box-shadow 0.3s ease;
 }
 
+/* ---------- Tema oscuro (P15) ---------- */
+[data-tema="oscuro"] {
+  --color-primario: #60a5fa;
+  --color-primario-oscuro: #93c5fd;
+  --color-acento: #fbbf24;
+  --color-texto: #f1f5f9;
+  --color-texto-suave: #cbd5e1;
+  --color-fondo: #0f172a;
+  --color-fondo-alt: #1e293b;
+  --color-borde: #334155;
+  --color-borde-fuerte: #475569;
+  --color-error: #f87171;
+  --color-exito: #4ade80;
+}
+
 /* ---------- Reset básico ---------- */
 *,
 *::before,
@@ -57,6 +72,8 @@ body {
   background: var(--color-fondo);
   line-height: 1.6;
   -webkit-font-smoothing: antialiased;
+  /* Cambio suave al alternar tema (P15) */
+  transition: background-color 0.4s ease, color 0.4s ease;
 }
 
 /* Titulares con la fuente serif del brief */
@@ -349,7 +366,7 @@ select:focus-visible {
   position: relative;
   overflow: hidden;
   padding: var(--espacio-lg);
-  background: linear-gradient(180deg, #ffffff 0%, var(--color-fondo-alt) 100%);
+  background: linear-gradient(180deg, var(--color-fondo) 0%, var(--color-fondo-alt) 100%);
   border: 1px solid var(--color-borde);
   border-radius: var(--radio);
   box-shadow: var(--sombra);
@@ -525,6 +542,55 @@ select:focus-visible {
   font-style: italic;
 }
 
+/* ---------- Conmutador de tema (P15) ---------- */
+.tema-toggle {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 38px;
+  height: 38px;
+  padding: 0;
+  font-size: 1rem;
+  line-height: 1;
+  color: var(--color-texto);
+  background: transparent;
+  border: 1px solid var(--color-borde);
+  border-radius: 999px;
+  cursor: pointer;
+  transition: var(--transicion);
+}
+
+.tema-toggle:hover {
+  border-color: var(--color-primario);
+}
+
+/* Ajustes de componentes en tema oscuro */
+[data-tema="oscuro"] .cabecera {
+  background: rgba(15, 23, 42, 0.92);
+}
+
+[data-tema="oscuro"] .cabecera--scrolled {
+  background: #0f172a;
+  box-shadow: 0 6px 24px rgba(0, 0, 0, 0.4);
+}
+
+[data-tema="oscuro"] .boton--primario {
+  color: #0f172a;
+}
+
+[data-tema="oscuro"] .boton--primario:hover {
+  color: #0f172a;
+}
+
+[data-tema="oscuro"] .saltar-contenido {
+  color: #0f172a;
+}
+
+[data-tema="oscuro"] .formulario__exito {
+  background: rgba(74, 222, 128, 0.12);
+  border-color: rgba(74, 222, 128, 0.35);
+}
+
 /* ---------- Registro / formulario ---------- */
 .registro {
   padding: var(--espacio-xl) 0;
@@ -563,7 +629,7 @@ select:focus-visible {
   padding: 0.75rem 0.9rem;
   font: inherit;
   color: var(--color-texto);
-  background: #fff;
+  background: var(--color-fondo);
   border: 1.5px solid var(--color-borde-fuerte);
   border-radius: 10px;
   transition: border-color 0.15s ease, box-shadow 0.15s ease;
@@ -698,6 +764,13 @@ main[id] {
 @media (min-width: 480px) {
   .beneficios__lista {
     grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+/* Pantallas pequeñas: se prioriza el toggle de tema y el CTA del hero */
+@media (max-width: 479px) {
+  .cabecera__boton {
+    display: none;
   }
 }
 
