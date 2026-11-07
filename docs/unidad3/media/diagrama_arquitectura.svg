@@ -1,0 +1,134 @@
+﻿<svg xmlns="http://www.w3.org/2000/svg" version="1.1" width="1400" height="900" viewBox="0 0 1400 900" font-family="Inter, 'Segoe UI', Arial, sans-serif" role="img">
+  <title>Arquitectura de la landing page</title>
+  <desc>Diagrama de arquitectura de la landing page en tres capas: HTML, JavaScript IIFE y datos y despliegue.</desc>
+  <defs>
+    <marker id="flecha" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
+      <path d="M0,0 L10,5 L0,10 Z" fill="#475569"/>
+    </marker>
+    <marker id="flechaAmbar" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="8" markerHeight="8" orient="auto-start-reverse">
+      <path d="M0,0 L10,5 L0,10 Z" fill="#f59e0b"/>
+    </marker>
+  </defs>
+
+  <rect x="0" y="0" width="1400" height="900" fill="#f8fafc"/>
+  <rect x="1" y="1" width="1398" height="898" fill="none" stroke="#e2e8f0" stroke-width="2"/>
+
+  <text x="700" y="58" text-anchor="middle" font-size="32" font-weight="700" fill="#0f172a">Arquitectura de la landing page</text>
+  <text x="700" y="88" text-anchor="middle" font-size="15" fill="#475569">Tres capas: estructura HTML, comportamiento JavaScript y datos con despliegue</text>
+  <rect x="620" y="98" width="160" height="4" rx="2" fill="#f59e0b"/>
+
+  <text x="245" y="116" text-anchor="middle" font-size="12" font-weight="700" letter-spacing="3" fill="#475569">CAPA 1</text>
+  <text x="695" y="116" text-anchor="middle" font-size="12" font-weight="700" letter-spacing="3" fill="#475569">CAPA 2</text>
+  <text x="1145" y="116" text-anchor="middle" font-size="12" font-weight="700" letter-spacing="3" fill="#475569">CAPA 3</text>
+
+  <rect x="55" y="124" width="380" height="48" rx="14" fill="#2563eb"/>
+  <text x="245" y="155" text-anchor="middle" font-size="20" font-weight="700" fill="#ffffff">HTML</text>
+  <rect x="505" y="124" width="380" height="48" rx="14" fill="#1d4ed8"/>
+  <text x="695" y="155" text-anchor="middle" font-size="20" font-weight="700" fill="#ffffff">JavaScript (IIFE)</text>
+  <rect x="955" y="124" width="380" height="48" rx="14" fill="#f59e0b"/>
+  <text x="1145" y="155" text-anchor="middle" font-size="20" font-weight="700" fill="#0f172a">Datos y despliegue</text>
+
+  <g fill="#ffffff" stroke="#e2e8f0" stroke-width="1.5">
+    <rect x="55" y="188" width="380" height="50" rx="14"/>
+    <rect x="55" y="248" width="380" height="50" rx="14"/>
+    <rect x="55" y="308" width="380" height="50" rx="14"/>
+    <rect x="55" y="368" width="380" height="50" rx="14"/>
+    <rect x="55" y="428" width="380" height="50" rx="14"/>
+    <rect x="55" y="488" width="380" height="50" rx="14"/>
+    <rect x="55" y="548" width="380" height="50" rx="14"/>
+    <rect x="55" y="608" width="380" height="50" rx="14"/>
+    <rect x="55" y="668" width="380" height="50" rx="14"/>
+    <rect x="55" y="728" width="380" height="50" rx="14"/>
+
+    <rect x="505" y="188" width="380" height="100" rx="14"/>
+    <rect x="505" y="304" width="380" height="100" rx="14"/>
+    <rect x="505" y="420" width="380" height="100" rx="14"/>
+    <rect x="505" y="536" width="380" height="100" rx="14"/>
+    <rect x="505" y="652" width="380" height="100" rx="14"/>
+
+    <rect x="955" y="188" width="380" height="140" rx="14"/>
+    <rect x="955" y="348" width="380" height="140" rx="14"/>
+    <rect x="955" y="508" width="380" height="140" rx="14"/>
+  </g>
+
+  <g fill="#0f172a" font-size="18" text-anchor="middle">
+    <text x="245" y="219">Header sticky</text>
+    <text x="245" y="279">Hero</text>
+    <text x="245" y="339">Beneficios</text>
+    <text x="245" y="399">Cómo funciona</text>
+    <text x="245" y="459">Testimonios</text>
+    <text x="245" y="519">FAQ</text>
+    <text x="245" y="579">Contador</text>
+    <text x="245" y="639">Registro</text>
+    <text x="245" y="699">Footer</text>
+    <text x="245" y="759">Aviso legal</text>
+  </g>
+  <g fill="#94a3b8" font-size="12" font-weight="600">
+    <text x="78" y="219">01</text>
+    <text x="78" y="279">02</text>
+    <text x="78" y="339">03</text>
+    <text x="78" y="399">04</text>
+    <text x="78" y="459">05</text>
+    <text x="78" y="519">06</text>
+    <text x="78" y="579">07</text>
+    <text x="78" y="639">08</text>
+    <text x="78" y="699">09</text>
+    <text x="78" y="759">10</text>
+  </g>
+
+  <g fill="#1d4ed8">
+    <rect x="517" y="206" width="6" height="64" rx="3"/>
+    <rect x="517" y="322" width="6" height="64" rx="3"/>
+    <rect x="517" y="438" width="6" height="64" rx="3"/>
+    <rect x="517" y="554" width="6" height="64" rx="3"/>
+    <rect x="517" y="670" width="6" height="64" rx="3"/>
+  </g>
+  <g>
+    <text x="540" y="230" font-size="19" font-weight="700" fill="#0f172a">core.js</text>
+    <text x="540" y="260" font-size="14" fill="#475569">Utilidades base e inicialización</text>
+    <text x="540" y="346" font-size="19" font-weight="700" fill="#0f172a">form-persistence.js</text>
+    <text x="540" y="376" font-size="14" fill="#475569">Guarda y restaura el registro</text>
+    <text x="540" y="462" font-size="19" font-weight="700" fill="#0f172a">faq.js</text>
+    <text x="540" y="492" font-size="14" fill="#475569">Acordeón de preguntas frecuentes</text>
+    <text x="540" y="578" font-size="19" font-weight="700" fill="#0f172a">countdown.js</text>
+    <text x="540" y="608" font-size="14" fill="#475569">Temporizador de la oferta</text>
+    <text x="540" y="694" font-size="19" font-weight="700" fill="#0f172a">scroll-progress.js</text>
+    <text x="540" y="724" font-size="14" fill="#475569">Barra de progreso de lectura</text>
+  </g>
+
+  <g fill="#f59e0b">
+    <rect x="967" y="206" width="6" height="104" rx="3"/>
+    <rect x="967" y="366" width="6" height="104" rx="3"/>
+    <rect x="967" y="526" width="6" height="104" rx="3"/>
+  </g>
+  <g>
+    <text x="990" y="236" font-size="21" font-weight="700" fill="#0f172a">localStorage</text>
+    <text x="990" y="266" font-size="15" font-weight="600" fill="#1d4ed8">resumia_form_*</text>
+    <text x="990" y="290" font-size="14" fill="#475569">Persistencia local del formulario</text>
+    <text x="990" y="396" font-size="21" font-weight="700" fill="#0f172a">POST a Formspree</text>
+    <text x="990" y="426" font-size="14" fill="#475569">Envío del formulario</text>
+    <text x="990" y="450" font-size="14" fill="#475569">de registro por correo</text>
+    <text x="990" y="556" font-size="21" font-weight="700" fill="#0f172a">GitHub Pages</text>
+    <text x="990" y="586" font-size="14" fill="#475569">Hosting estático</text>
+    <text x="990" y="610" font-size="14" fill="#475569">Publicación del sitio</text>
+  </g>
+
+  <g fill="none" stroke="#475569" stroke-width="2">
+    <path d="M 439 273 L 501 242" marker-end="url(#flecha)"/>
+    <path d="M 439 513 L 501 500" marker-end="url(#flecha)"/>
+    <path d="M 439 573 L 501 586" marker-end="url(#flecha)"/>
+    <path d="M 439 633 C 478 633, 462 354, 501 354" marker-end="url(#flecha)"/>
+    <path d="M 887 344 C 924 344, 916 268, 953 268" marker-end="url(#flecha)"/>
+    <path d="M 887 368 C 924 368, 916 428, 953 428" marker-end="url(#flecha)"/>
+  </g>
+  <g fill="#475569" font-size="11" text-anchor="middle">
+    <text x="470" y="236">eventos</text>
+    <text x="920" y="258">guardado</text>
+    <text x="920" y="452">envío</text>
+  </g>
+
+  <path d="M 245 782 L 245 822 Q 245 830 253 830 L 1137 830 Q 1145 830 1145 822 L 1145 654" fill="none" stroke="#f59e0b" stroke-width="2.5" stroke-dasharray="8 6" marker-end="url(#flechaAmbar)"/>
+  <text x="700" y="822" text-anchor="middle" font-size="13" fill="#475569">Publicación: GitHub Pages sirve el sitio completo</text>
+
+  <text x="700" y="872" text-anchor="middle" font-size="12" fill="#475569">Las flechas indican el flujo de eventos y datos entre capas</text>
+</svg>
