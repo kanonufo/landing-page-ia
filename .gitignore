@@ -16,3 +16,11 @@ Electiva*.pdf
 
 # Empaquetado de entrega
 *.zip
+
+# Dependencias y artefactos de herramientas
+node_modules/
+docs/unidad3/video_tmp/
+docs/unidad3/_preview/
+*.build.html
+.lighthouseci/
+

@@ -1,84 +1,125 @@
-# ResumIA — Landing page
+# ResumIA — Landing page de captura para una beta de IA
 
-Landing page de captura de leads para **ResumIA**, una startup ficticia de IA que
-convierte documentos **PDF** en **resúmenes** claros.
+[![GitHub Pages](https://img.shields.io/badge/GitHub%20Pages-activo-2563eb)](https://kanonufo.github.io/landing-page-ia/)
+[![HTML5](https://img.shields.io/badge/HTML5-sem%C3%A1ntico-e34f26)](https://developer.mozilla.org/es/docs/Web/HTML)
+[![CSS3](https://img.shields.io/badge/CSS3-mobile--first-264de4)](https://developer.mozilla.org/es/docs/Web/CSS)
+[![JavaScript](https://img.shields.io/badge/JavaScript-ES6%2B-f7df1e)](https://developer.mozilla.org/es/docs/Web/JavaScript)
+[![Lighthouse](https://img.shields.io/badge/Lighthouse-97--100%20Performance-0cce6b)](docs/unidad3/capturas/lighthouse_report.png)
 
-Proyecto de la electiva *Landing Pages: Desarrollo web acelerado con Google AI Studio*
-(**Unidad 2**: copywriting, HTML semántico, CSS responsive y JavaScript), construido
-con HTML5, CSS3 y JavaScript vanilla, usando Google AI Studio (Gemini) como asistente.
+**ResumIA** es una startup ficticia cuyo producto convierte documentos PDF extensos en resúmenes claros: ideas clave, conclusiones y próximos pasos. Esta landing tiene un único objetivo de conversión: capturar correos para el acceso anticipado a la beta.
+
+Proyecto de la electiva *Landing Pages: Desarrollo web acelerado con Google AI Studio* (Universidad Pedagógica y Tecnológica de Colombia). Construido con HTML5, CSS3 y JavaScript ES6+ puro, con Google AI Studio (Gemini) como asistente y auditoría humana del código generado.
+
+![Vista de escritorio de ResumIA](docs/unidad3/capturas/readme_preview.png)
 
 ## Demo
 
-- **En vivo:** https://kanonufo.github.io/landing-page-ia/
-- **Repositorio:** https://github.com/kanonufo/landing-page-ia
-- En local: abre `index.html` en el navegador (no necesita servidor ni build).
+- **Sitio publicado:** <https://kanonufo.github.io/landing-page-ia/>
+- **Repositorio:** <https://github.com/kanonufo/landing-page-ia>
+- **Local:** abre `index.html` o sirve la carpeta con `python -m http.server 8788`.
 
-## Secciones
+## Qué incluye
 
-1. **Header** — logo, menú de anclas y CTA, con cambio visual al hacer scroll.
-2. **Hero** — propuesta de valor, subtítulo, CTA y microcopy anti-fricción.
-3. **Beneficios** — 5 tarjetas con icono, título y descripción.
-4. **Testimonios** — 2 testimonios con datos cuantificables.
-5. **¿Cómo funciona?** — 3 pasos con conectores en escritorio.
-6. **Formulario** — nombre, correo, perfil y consentimiento, con validación accesible.
-7. **Privacidad** — aviso del proyecto de demostración.
-8. **Footer** — marca, descripción y año dinámico.
+- **Hero** con propuesta de valor, dos CTA e ilustración vectorial.
+- **Beneficios** (5 tarjetas) y **cómo funciona** (3 pasos).
+- **Testimonios** (3) con prueba social cuantificable.
+- **FAQ** con acordeón accesible (`aria-expanded`, teclado, una respuesta abierta).
+- **Contador de cohorte** persistente con `localStorage`.
+- **Formulario de captura** con validación accesible, autoguardado, restauración, envío externo, limpieza del borrador y estado de usuario convertido.
+- **Progreso de lectura** y botón "volver arriba".
+- **Modo oscuro** con preferencia persistida y respeto de `prefers-color-scheme`.
+- **Aviso legal** y contacto en el pie.
 
-## Funcionalidades JavaScript
+## Persistencia y estado
 
-- Validación de formulario en `blur` y `submit`, con mensajes inline (`aria-invalid`,
-  `role="alert"`), foco en el primer campo inválido y limpieza del error al corregir.
-- Animaciones de aparición con **Intersection Observer** en 3 secciones
-  (`.animate-on-scroll`), con fallback sin soporte y respeto de `prefers-reduced-motion`.
-- **Cabecera** que cambia de apariencia al superar 80px de scroll.
-- **Modo oscuro** con botón accesible (`aria-pressed`), persistencia en `localStorage`
-  (con `try/catch`) y respeto de `prefers-color-scheme` en la primera visita.
+| Clave | Uso |
+|---|---|
+| `resumia_form_nombre` | Borrador del nombre. |
+| `resumia_form_email` | Borrador del correo. |
+| `resumia_form_rol` | Perfil seleccionado. |
+| `resumia_form_consentimiento` | Decisión de consentimiento. |
+| `resumia_usuario_convertido` | Marca de conversión. |
+| `resumia_usuario_nombre` | Nombre para el agradecimiento. |
+| `resumia_countdown_fin` | Fecha de cierre de la cohorte. |
+| `resumia_tema` | Tema claro/oscuro. |
 
-## Tecnologías y buenas prácticas
+El envío se realiza con `fetch` al endpoint declarado en `data-endpoint` del formulario. En la demo se usa `https://httpbin.org/post` para verificar el `POST` y la respuesta 200; para producción basta con cambiarlo por `https://formspree.io/f/TU_ID`.
 
-- HTML5 semántico validado en W3C (0 errores, 0 advertencias).
-- CSS mobile-first con variables en `:root`, BEM y breakpoints en 480/768/1200.
-- JavaScript ES6+ vanilla (solo `const`/`let`), sin frameworks ni librerías.
-- Accesibilidad WCAG 2.1 AA: contraste ≥4.5:1, navegación por teclado, foco visible,
-  etiquetas asociadas y regiones de error.
-- Tipografías de Google Fonts: Lora (títulos) e Inter (cuerpo).
+## Sistema de diseño y snippets
+
+- **32 custom properties** en `:root` y tema oscuro por redefinición de tokens.
+- Convención `resumia-[componente]__[elemento]--[estado]`.
+- Cuatro snippets con IIFE y script al final del body: hero, FAQ, contador y progreso de lectura.
+- Sin frameworks, sin librerías y sin build.
+
+## Tecnologías y calidad
+
+- HTML5 semántico validado en W3C.
+- CSS mobile-first con BEM, breakpoints en 480 / 768 / 1200 y `prefers-reduced-motion`.
+- JavaScript ES6+ (`const`/`let`, funciones nombradas, `fetch`, `async/await`, `IntersectionObserver`).
+- Accesibilidad WCAG 2.1 AA: contraste, foco visible, etiquetas, regiones de error y navegación por teclado.
+- Lighthouse: Performance 97–100, Accessibility 100, Best Practices 100, SEO 100.
+- Consola sin errores ni respuestas 4xx.
+
+## Proceso de desarrollo (5 fases)
+
+1. **Exploración:** buyer persona y dolores del público académico.
+2. **Definición:** arquitectura de secciones y copy del hero.
+3. **Generación:** HTML/CSS/JS con Gemini en Google AI Studio.
+4. **Refinamiento:** accesibilidad, responsive, rendimiento y auditoría del código.
+5. **Consolidación:** persistencia, sistema de componentes, documentación y despliegue.
+
+Los prompts se conservan en [`docs/prompts.md`](docs/prompts.md) y [`docs/unidad3/prompts_unidad3.md`](docs/unidad3/prompts_unidad3.md).
 
 ## Estructura
 
-```
+```text
 .
-├── index.html                  # Estructura semántica de la página
-├── styles.css                  # Estilos (mobile-first, BEM, temas claro/oscuro)
-├── script.js                   # Validación, animaciones, cabecera y tema
+├── index.html
+├── styles.css
 ├── assets/
-│   ├── images/hero.svg         # Ilustración del hero
-│   └── icons/favicon.svg       # Icono del sitio
+│   ├── js/
+│   │   ├── core.js                 # tema, cabecera, animaciones, año
+│   │   ├── form-persistence.js     # autoguardado, restauración, envío, convertido
+│   │   ├── faq.js                  # acordeón accesible
+│   │   ├── countdown.js            # contador persistente
+│   │   └── scroll-progress.js      # progreso de lectura y volver arriba
+│   ├── images/hero_resumia_v2.svg
+│   └── icons/favicon.svg
 ├── docs/
-│   ├── DiarioDePrompts.pdf     # Diario de prompts (entregable)
-│   ├── ReflexionCritica.pdf    # Reflexión personal (entregable)
-│   ├── diario_prompts.md       # Fuente del diario (21 prompts)
-│   ├── planificacion.md        # Buyer persona, brief creativo y secciones
-│   ├── boceto_planificacion.png / .md
-│   ├── brief.md, prompts.md    # Material de trabajo de la Unidad 1
-│   └── capturas/               # Evidencias (vistas, W3C, Lighthouse, formulario, AI Studio)
+│   ├── prompts.md, diario_prompts.md, planificacion.md, brief.md
+│   ├── capturas/                   # evidencias de la Unidad 2
+│   └── unidad3/
+│       ├── E30_repositorio/        # reflexión + Issues y Kanban (PDF)
+│       ├── E31_auditoria/          # informe + código original/corregido
+│       ├── E32_persistencia/       # diseño + video + guion
+│       ├── E33_sistema/            # sistema de diseño
+│       ├── E34_memoria/            # memoria + guion de presentación
+│       ├── capturas/               # consola, Application, Network, Lighthouse, responsive
+│       └── media/                  # diagramas y portadas SVG/PNG
 └── README.md
 ```
 
-## Cómo probar
+## Cómo personalizar
 
-1. Envía el formulario vacío → aparecen los errores inline y el foco va al primer campo.
-2. Prueba un correo inválido (ej. `a@b`) → error de formato solo en ese campo.
-3. Completa todo y acepta el consentimiento → mensaje de éxito y opción de reiniciar.
-4. Baja por la página → las secciones aparecen con fade y la cabecera cambia a partir de 80px.
-5. Pulsa el botón 🌙/☀️ de la cabecera → alterna el tema y lo recuerda al recargar.
+1. **Marca y copy:** edita los textos de `index.html` y los SVG de `assets/images` y `assets/icons`.
+2. **Paleta y tipografía:** cambia los tokens de `:root` en `styles.css`; el tema oscuro se ajusta en `[data-tema="oscuro"]`.
+3. **Endpoint del formulario:** modifica `data-endpoint` en `<form id="formulario">`.
+4. **Cohorte:** la fecha se guarda en `resumia_countdown_fin`; para reiniciarla, borra esa clave en DevTools.
+5. **Claves de persistencia:** mantén el prefijo `resumia_` para evitar colisiones.
 
-## Documentación
+## Entregables de la Unidad 3
 
-- `docs/diario_prompts.md` — evidencia del proceso de prompting (Fases 1–5).
-- `docs/planificacion.md` — planificación: producto, buyer persona, secciones y brief creativo.
-- `docs/capturas/` — capturas exigidas por el entregable (3 vistas, Lighthouse, W3C,
-  validación del formulario y sesiones de AI Studio).
+- **E3.0:** [`reflexion_repositorio.pdf`](docs/unidad3/E30_repositorio/reflexion_repositorio.pdf) · [`issues_y_project.pdf`](docs/unidad3/E30_repositorio/issues_y_project.pdf)
+- **E3.1:** [`informe_auditoria.pdf`](docs/unidad3/E31_auditoria/informe_auditoria.pdf) · [`codigo_original.html`](docs/unidad3/E31_auditoria/codigo_original.html) · [`codigo_corregido.html`](docs/unidad3/E31_auditoria/codigo_corregido.html)
+- **E3.2:** [`diseno_persistencia.pdf`](docs/unidad3/E32_persistencia/diseno_persistencia.pdf) · [`demo_persistencia.mp4`](docs/unidad3/E32_persistencia/demo_persistencia.mp4) · [`guion_video.pdf`](docs/unidad3/E32_persistencia/guion_video.pdf)
+- **E3.3:** [`sistema_diseno.pdf`](docs/unidad3/E33_sistema/sistema_diseno.pdf)
+- **E3.4:** [`memoria.pdf`](docs/unidad3/E34_memoria/memoria.pdf) · [`guion_presentacion.pdf`](docs/unidad3/E34_memoria/guion_presentacion.pdf)
+
+## Créditos
+
+Proyecto académico de la Universidad Pedagógica y Tecnológica de Colombia. Copy, estructura y código generados con asistencia de Google AI Studio (Gemini) y revisados, corregidos y documentados por el estudiante. Tipografías Lora e Inter de Google Fonts. Ilustraciones y diagramas vectoriales propios.
 
 ---
 
-Proyecto académico · Código generado con IA (prompts en `docs/diario_prompts.md`).
+**Nota académica:** el sitio es una demostración. El formulario envía los datos a un servicio HTTP externo para verificar el flujo; no se usan para publicidad ni se comparten con terceros.
