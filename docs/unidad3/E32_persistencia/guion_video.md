@@ -1,7 +1,7 @@
-# Guion del video de demostración — E3.2
+﻿# Guion del video de demostración — E3.2
 
 **Archivo:** `demo_persistencia.mp4`
-**Duración:** 2 min 11 s (131 s)
+**Duración:** 2 min 18 s (138 s)
 **Formato:** 1920 × 1080, H.264, subtítulos en español quemados.
 **Repositorio:** <https://github.com/kanonufo/landing-page-ia>
 
@@ -22,8 +22,9 @@
 | 1:04–1:19 | Recarga y restauración | Se recarga la página. Los cuatro campos vuelven con sus valores y aparece el aviso "Recuperamos el borrador…". |
 | 1:19–1:32 | Envío externo | Se pulsa "Quiero mi acceso". La petición se completa y se muestra el mensaje de agradecimiento. |
 | 1:32–1:45 | Limpieza | En Application se observa que las claves `resumia_form_*` desaparecen; quedan `resumia_usuario_convertido`, `resumia_usuario_nombre` y la fecha del contador. |
-| 1:45–2:00 | Usuario convertido | Se recarga. El formulario no aparece; se muestra "Gracias, Elena Vázquez. Tu acceso está reservado…". |
-| 2:00–2:11 | Tarjeta de cierre | Cuatro logros verificados y la URL del repositorio. |
+| 1:45-2:05 | Usuario convertido | Se recarga. El formulario no aparece; se muestra "Gracias, Elena Vázquez. Tu acceso está reservado.". |
+| 2:05-2:12 | Respuesta del servicio | El panel Network muestra el `POST` con estado 200 y la respuesta del servicio externo. |
+| 2:12–2:18 | Tarjeta de cierre | Cuatro logros verificados y la URL del repositorio. |
 
 ## Subtítulos
 
@@ -35,6 +36,7 @@ Los subtítulos están incluidos en `demo_persistencia.srt` y se quemaron en el 
 4. "El formulario se envía al servicio externo y se confirma".
 5. "El borrador se limpia y el usuario queda marcado como convertido".
 6. "En la siguiente visita se muestra el agradecimiento personalizado".
+7. "El POST llega al servicio externo y responde 200".
 
 ## Nota de producción
 

@@ -1,4 +1,4 @@
-# Unidad 3 — qué se entrega y qué queda pendiente
+﻿# Unidad 3 — qué se entrega y qué queda pendiente
 
 **Sitio publicado:** <https://kanonufo.github.io/landing-page-ia/>
 **Repositorio:** <https://github.com/kanonufo/landing-page-ia>
@@ -9,7 +9,7 @@
 |---|---|---|
 | E3.0 | `E30_repositorio/reflexion_repositorio.pdf` y `issues_y_project.pdf` | Listo. Issues #1–#6 creados y cerrados con referencia a commits. |
 | E3.1 | `E31_auditoria/informe_auditoria.pdf` + `codigo_original.html` + `codigo_corregido.html` | Listo. 14 hallazgos, ciclo AVIA, comparación antes/después y protocolo de 12 ítems. |
-| E3.2 | `E32_persistencia/diseno_persistencia.pdf` + `demo_persistencia.mp4` | Listo. Video de 2 min 11 s con subtítulos y evidencias de DevTools. |
+| E3.2 | `E32_persistencia/diseno_persistencia.pdf` + `demo_persistencia.mp4` | Listo. Video de 2 min 18 s con subtítulos y evidencias de DevTools. |
 | E3.3 | `E33_sistema/sistema_diseno.pdf` | Listo. 16 tokens documentados, 4 snippets, 4 prompts CREDA y Lighthouse. |
 | E3.4 | `E34_memoria/memoria.pdf` + `guion_presentacion.pdf` | Listo. Memoria de 12 páginas y guion de 10 minutos. |
 
