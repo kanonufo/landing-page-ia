@@ -16,18 +16,26 @@
 
   <!-- Favicon vectorial -->
   <link rel="icon" type="image/svg+xml" href="assets/icons/favicon.svg">
-  <!-- Tipografías: Lora (títulos) + Inter (cuerpo) -->
+
+  <!-- Tipografías: Lora (títulos) + Inter (cuerpo).
+       Se cargan sin bloquear el render y con fallback del sistema. -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&family=Lora:wght@700&display=swap" rel="stylesheet">
+  <link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&family=Lora:wght@700&display=swap">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&family=Lora:wght@700&display=swap" media="print" onload="this.media='all'">
+  <noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&family=Lora:wght@700&display=swap"></noscript>
+
   <!-- Hoja de estilos principal -->
   <link rel="stylesheet" href="styles.css">
-  <!-- JavaScript diferido: se ejecuta tras parsear el HTML -->
-  <script src="script.js" defer></script>
 </head>
 <body>
   <!-- Enlace para saltar al contenido (accesibilidad / teclado) -->
   <a class="saltar-contenido" href="#contenido">Saltar al contenido principal</a>
+
+  <!-- Barra de progreso de lectura (snippet de navegación, E3.3) -->
+  <div class="resumia-progress" aria-hidden="true">
+    <span class="resumia-progress__bar" id="resumia-progress-bar"></span>
+  </div>
 
   <!-- ============ CABECERA ============ -->
   <header class="cabecera">
@@ -42,6 +50,7 @@
           <li><a class="cabecera__enlace" href="#beneficios">Beneficios</a></li>
           <li><a class="cabecera__enlace" href="#como-funciona">Cómo funciona</a></li>
           <li><a class="cabecera__enlace" href="#testimonios">Testimonios</a></li>
+          <li><a class="cabecera__enlace" href="#faq">FAQ</a></li>
         </ul>
         <button class="tema-toggle" type="button" aria-pressed="false" aria-label="Activar modo oscuro">🌙</button>
         <a class="boton boton--primario cabecera__boton" href="#registro">Acceso anticipado</a>
@@ -50,28 +59,28 @@
   </header>
 
   <main id="contenido" tabindex="-1">
-    <!-- ============ HERO ============ -->
-    <section class="hero" aria-labelledby="hero-titulo">
-      <div class="contenedor hero__interior">
-        <div class="hero__texto">
-          <p class="hero__etiqueta">Beta abierta · Impulsado por IA</p>
-          <h1 class="hero__titulo" id="hero-titulo">
+    <!-- ============ HERO (snippet de presentación, E3.3) ============ -->
+    <section class="resumia-hero" aria-labelledby="hero-titulo">
+      <div class="contenedor resumia-hero__interior">
+        <div class="resumia-hero__texto">
+          <p class="resumia-hero__etiqueta">Beta abierta · Impulsado por IA</p>
+          <h1 class="resumia-hero__titulo" id="hero-titulo">
             Resume PDFs complejos en minutos, no horas
           </h1>
-          <p class="hero__subtitulo">
+          <p class="resumia-hero__subtitulo">
             Obtén conclusiones y próximos pasos accionables de cada PDF.
             Accede gratis a nuestra fase beta y optimiza tu tiempo de estudio.
           </p>
-          <div class="hero__acciones">
+          <div class="resumia-hero__acciones">
             <a class="boton boton--primario boton--grande" href="#registro">Reservar mi lugar ahora</a>
             <a class="boton boton--fantasma" href="#beneficios">Ver beneficios</a>
           </div>
-          <p class="hero__nota">Acceso gratuito durante la beta. No solicitamos tarjeta de crédito y respetamos tu privacidad.</p>
+          <p class="resumia-hero__nota">Acceso gratuito durante la beta. No solicitamos tarjeta de crédito y respetamos tu privacidad.</p>
         </div>
 
-        <figure class="hero__media">
-          <img class="hero__imagen" src="assets/images/hero.svg"
-               alt="Ilustración de un documento PDF que se transforma en un resumen con viñetas"
+        <figure class="resumia-hero__media">
+          <img class="resumia-hero__imagen" src="assets/images/hero_resumia_v2.svg"
+               alt="Ilustración de un documento PDF que se transforma en un resumen con viñetas mediante IA"
                width="560" height="420" loading="eager" fetchpriority="high" decoding="async">
         </figure>
       </div>
@@ -127,39 +136,7 @@
       </div>
     </section>
 
-    <!-- ============ TESTIMONIOS (prueba social) ============ -->
-    <section class="testimonios animate-on-scroll" id="testimonios" aria-labelledby="testimonios-titulo">
-      <div class="contenedor">
-        <h2 class="titulo-seccion" id="testimonios-titulo">Lo que dicen los primeros usuarios</h2>
-        <p class="subtitulo-seccion">Resultados concretos de nuestra beta cerrada.</p>
-
-        <ul class="testimonios__lista">
-          <li class="tarjeta-testimonio">
-            <blockquote class="tarjeta-testimonio__texto">
-              <p>Con esta herramienta filtro los 15 PDFs semanales de mi investigación.
-                Me permite descartar documentos que no aportan valor a mi tesis en segundos.</p>
-            </blockquote>
-            <p class="tarjeta-testimonio__autor">
-              <span class="tarjeta-testimonio__nombre">Valentina R.</span>
-              <span class="tarjeta-testimonio__cargo">Estudiante de maestría · Madrid</span>
-            </p>
-          </li>
-
-          <li class="tarjeta-testimonio">
-            <blockquote class="tarjeta-testimonio__texto">
-              <p>He logrado reducir el tiempo que dedico a revisar informes técnicos en un 60%.
-                Ahora proceso cinco documentos al día en lugar de solo uno.</p>
-            </blockquote>
-            <p class="tarjeta-testimonio__autor">
-              <span class="tarjeta-testimonio__nombre">Javier M.</span>
-              <span class="tarjeta-testimonio__cargo">Analista · Ciudad de México</span>
-            </p>
-          </li>
-        </ul>
-      </div>
-    </section>
-
-    <!-- ============ ¿CÓMO FUNCIONA? (sección libre) ============ -->
+    <!-- ============ ¿CÓMO FUNCIONA? ============ -->
     <section class="como-funciona animate-on-scroll" id="como-funciona" aria-labelledby="como-funciona-titulo">
       <div class="contenedor">
         <h2 class="titulo-seccion" id="como-funciona-titulo">¿Cómo funciona?</h2>
@@ -189,6 +166,144 @@
       </div>
     </section>
 
+    <!-- ============ TESTIMONIOS (prueba social) ============ -->
+    <section class="testimonios animate-on-scroll" id="testimonios" aria-labelledby="testimonios-titulo">
+      <div class="contenedor">
+        <h2 class="titulo-seccion" id="testimonios-titulo">Lo que dicen los primeros usuarios</h2>
+        <p class="subtitulo-seccion">Resultados concretos de nuestra beta cerrada.</p>
+
+        <ul class="testimonios__lista">
+          <li class="tarjeta-testimonio">
+            <blockquote class="tarjeta-testimonio__texto">
+              <p>Con esta herramienta filtro los 15 PDFs semanales de mi investigación.
+                Me permite descartar documentos que no aportan valor a mi tesis en segundos.</p>
+            </blockquote>
+            <p class="tarjeta-testimonio__autor">
+              <span class="tarjeta-testimonio__nombre">Valentina R.</span>
+              <span class="tarjeta-testimonio__cargo">Estudiante de maestría · Madrid</span>
+            </p>
+          </li>
+
+          <li class="tarjeta-testimonio">
+            <blockquote class="tarjeta-testimonio__texto">
+              <p>He logrado reducir el tiempo que dedico a revisar informes técnicos en un 60%.
+                Ahora proceso cinco documentos al día en lugar de solo uno.</p>
+            </blockquote>
+            <p class="tarjeta-testimonio__autor">
+              <span class="tarjeta-testimonio__nombre">Javier M.</span>
+              <span class="tarjeta-testimonio__cargo">Analista · Ciudad de México</span>
+            </p>
+          </li>
+
+          <li class="tarjeta-testimonio">
+            <blockquote class="tarjeta-testimonio__texto">
+              <p>Preparo mis clases con resúmenes que conservan las citas y los matices.
+                Lo que antes me tomaba una tarde ahora es una revisión de veinte minutos.</p>
+            </blockquote>
+            <p class="tarjeta-testimonio__autor">
+              <span class="tarjeta-testimonio__nombre">Camila T.</span>
+              <span class="tarjeta-testimonio__cargo">Docente universitaria · Bogotá</span>
+            </p>
+          </li>
+        </ul>
+      </div>
+    </section>
+
+    <!-- ============ FAQ (snippet de interacción, E3.3) ============ -->
+    <section class="resumia-faq animate-on-scroll" id="faq" aria-labelledby="faq-titulo">
+      <div class="contenedor resumia-faq__contenedor">
+        <h2 class="titulo-seccion" id="faq-titulo">Preguntas frecuentes</h2>
+        <p class="subtitulo-seccion">Lo que necesitas saber antes de reservar tu acceso.</p>
+
+        <div class="resumia-faq__lista">
+          <div class="resumia-faq__item">
+            <h3 class="resumia-faq__heading">
+              <button class="resumia-faq__pregunta" type="button"
+                      aria-expanded="false" aria-controls="faq-respuesta-1" id="faq-pregunta-1">
+                ¿ResumIA reemplaza mi lectura?
+                <span class="resumia-faq__icono" aria-hidden="true"></span>
+              </button>
+            </h3>
+            <div class="resumia-faq__respuesta" id="faq-respuesta-1" role="region" aria-labelledby="faq-pregunta-1" hidden>
+              <p>No. ResumIA actúa como un mapa de navegación: resalta argumentos y conclusiones
+                para que decidas qué profundizar. El criterio académico sigue siendo tuyo.</p>
+            </div>
+          </div>
+
+          <div class="resumia-faq__item">
+            <h3 class="resumia-faq__heading">
+              <button class="resumia-faq__pregunta" type="button"
+                      aria-expanded="false" aria-controls="faq-respuesta-2" id="faq-pregunta-2">
+                ¿Qué pasa con la privacidad de mis documentos?
+                <span class="resumia-faq__icono" aria-hidden="true"></span>
+              </button>
+            </h3>
+            <div class="resumia-faq__respuesta" id="faq-respuesta-2" role="region" aria-labelledby="faq-pregunta-2" hidden>
+              <p>Los archivos se procesan de forma cifrada y no se comparten con terceros.
+                Puedes solicitar la eliminación de tus datos en cualquier momento.</p>
+            </div>
+          </div>
+
+          <div class="resumia-faq__item">
+            <h3 class="resumia-faq__heading">
+              <button class="resumia-faq__pregunta" type="button"
+                      aria-expanded="false" aria-controls="faq-respuesta-3" id="faq-pregunta-3">
+                ¿La beta tiene costo?
+                <span class="resumia-faq__icono" aria-hidden="true"></span>
+              </button>
+            </h3>
+            <div class="resumia-faq__respuesta" id="faq-respuesta-3" role="region" aria-labelledby="faq-pregunta-3" hidden>
+              <p>No. Durante la beta el acceso es gratuito y no pedimos tarjeta de crédito.
+                Cuando lancemos la versión final, los usuarios de la beta conservarán una condición preferente.</p>
+            </div>
+          </div>
+
+          <div class="resumia-faq__item">
+            <h3 class="resumia-faq__heading">
+              <button class="resumia-faq__pregunta" type="button"
+                      aria-expanded="false" aria-controls="faq-respuesta-4" id="faq-pregunta-4">
+                ¿Qué formatos de archivo acepta?
+                <span class="resumia-faq__icono" aria-hidden="true"></span>
+              </button>
+            </h3>
+            <div class="resumia-faq__respuesta" id="faq-respuesta-4" role="region" aria-labelledby="faq-pregunta-4" hidden>
+              <p>PDF con texto seleccionable. Los documentos escaneados se incorporarán
+                con reconocimiento óptico de caracteres en la siguiente iteración.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ CONTADOR (snippet de conversión, E3.3) ============ -->
+    <section class="resumia-countdown animate-on-scroll" id="acceso" aria-labelledby="countdown-titulo">
+      <div class="contenedor resumia-countdown__interior">
+        <div class="resumia-countdown__texto">
+          <p class="resumia-countdown__etiqueta">Cupos de la beta</p>
+          <h2 class="resumia-countdown__titulo" id="countdown-titulo">La siguiente cohorte abre en</h2>
+        </div>
+        <div class="resumia-countdown__reloj" id="resumia-countdown" role="timer" aria-live="off">
+          <div class="resumia-countdown__bloque">
+            <span class="resumia-countdown__valor" id="countdown-dias">00</span>
+            <span class="resumia-countdown__unidad">días</span>
+          </div>
+          <div class="resumia-countdown__bloque">
+            <span class="resumia-countdown__valor" id="countdown-horas">00</span>
+            <span class="resumia-countdown__unidad">horas</span>
+          </div>
+          <div class="resumia-countdown__bloque">
+            <span class="resumia-countdown__valor" id="countdown-minutos">00</span>
+            <span class="resumia-countdown__unidad">min</span>
+          </div>
+          <div class="resumia-countdown__bloque">
+            <span class="resumia-countdown__valor" id="countdown-segundos">00</span>
+            <span class="resumia-countdown__unidad">seg</span>
+          </div>
+        </div>
+        <a class="boton boton--primario boton--grande" href="#registro">Reservar mi lugar</a>
+      </div>
+    </section>
+
     <!-- ============ FORMULARIO DE CAPTURA ============ -->
     <section class="registro" id="registro" aria-labelledby="registro-titulo">
       <div class="contenedor registro__interior">
@@ -197,8 +312,22 @@
           <p class="subtitulo-seccion">Déjanos tus datos y te avisamos en cuanto abramos tu cupo.</p>
         </div>
 
-        <!-- Formulario con validación propia (novalidate para controlar los mensajes) -->
-        <form class="formulario" id="formulario" novalidate>
+        <!-- Aviso de borrador restaurado (se muestra solo si había datos guardados) -->
+        <p class="formulario__borrador" id="aviso-borrador" role="status" hidden>
+          Recuperamos el borrador que dejaste en este navegador.
+        </p>
+
+        <!-- Formulario con validación propia y persistencia (E3.2).
+             data-endpoint: servicio externo de captura. Para producción,
+             sustituir por https://formspree.io/f/TU_ID. -->
+        <form class="formulario" id="formulario" novalidate
+              data-endpoint="https://httpbin.org/post">
+          <!-- Campo trampa anti-spam (Formspree): invisible para personas -->
+          <div class="formulario__trampa" aria-hidden="true">
+            <label for="_gotcha">No rellenar</label>
+            <input type="text" id="_gotcha" name="_gotcha" tabindex="-1" autocomplete="off">
+          </div>
+
           <!-- Nombre -->
           <div class="campo">
             <label class="campo__etiqueta" for="nombre">Nombre <span aria-hidden="true">*</span></label>
@@ -239,26 +368,36 @@
           </div>
           <p class="campo__error" id="error-consentimiento" role="alert" hidden></p>
 
-          <button class="boton boton--primario boton--grande boton--bloque" type="submit">
+          <button class="boton boton--primario boton--grande boton--bloque" type="submit" id="boton-enviar">
             Quiero mi acceso
           </button>
+
+          <!-- Estado del envío: anunciado a lectores de pantalla -->
+          <p class="formulario__estado" id="estado-envio" role="status" aria-live="polite"></p>
         </form>
 
         <!-- Mensaje de éxito (se muestra al enviar correctamente) -->
         <div class="formulario__exito" id="mensaje-exito" role="status" tabindex="-1" hidden>
-          <p class="formulario__exito-texto">¡Listo! 🎉 Te avisaremos en cuanto tu acceso esté disponible.</p>
+          <p class="formulario__exito-texto" id="texto-exito">¡Listo! 🎉 Te avisaremos en cuanto tu acceso esté disponible.</p>
           <button class="boton boton--fantasma" type="button" id="reiniciar">Enviar otra respuesta</button>
         </div>
       </div>
     </section>
 
-    <!-- ============ PRIVACIDAD (demo) ============ -->
+    <!-- ============ PRIVACIDAD Y AVISO LEGAL ============ -->
     <section class="privacidad" id="privacidad" aria-labelledby="privacidad-titulo">
       <div class="contenedor">
-        <h2 class="privacidad__titulo" id="privacidad-titulo">Privacidad</h2>
+        <h2 class="privacidad__titulo" id="privacidad-titulo">Privacidad y aviso legal</h2>
         <p class="privacidad__texto">
-          Proyecto de demostración: los datos del formulario <strong>no se envían ni se almacenan</strong>
-          en ningún servidor; toda la validación ocurre en tu navegador.
+          Proyecto académico de demostración. Los datos del formulario se envían a un
+          servicio externo de captura para verificar el flujo de conversión y se eliminan
+          del almacenamiento local del navegador tras el envío. No se usan para publicidad
+          ni se comparten con terceros.
+        </p>
+        <p class="privacidad__texto">
+          Responsable: ResumIA (proyecto ficticio) · Contacto:
+          <a href="mailto:hola@resumia.app">hola@resumia.app</a>. Puedes solicitar la
+          eliminación de tus datos escribiendo a ese correo.
         </p>
       </div>
     </section>
@@ -268,9 +407,25 @@
   <footer class="pie">
     <div class="contenedor pie__interior">
       <p class="pie__marca">ResumIA</p>
-      <p class="pie__texto">Proyecto de demostración · Landing page creada con IA.</p>
+      <p class="pie__texto">Proyecto académico · Landing page creada con IA.</p>
+      <p class="pie__texto">
+        Contacto: <a class="pie__enlace" href="mailto:hola@resumia.app">hola@resumia.app</a> ·
+        <a class="pie__enlace" href="#privacidad">Aviso legal y privacidad</a>
+      </p>
       <p class="pie__copy">© <span id="anio">2026</span> ResumIA. Todos los derechos reservados.</p>
     </div>
   </footer>
+
+  <!-- Botón para volver arriba (snippet de navegación, E3.3) -->
+  <button class="resumia-top" type="button" id="resumia-top" aria-label="Volver al inicio de la página" hidden>
+    <span aria-hidden="true">↑</span>
+  </button>
+
+  <!-- ============ SCRIPTS (al final del body, cada uno en su IIFE) ============ -->
+  <script src="assets/js/core.js"></script>
+  <script src="assets/js/form-persistence.js"></script>
+  <script src="assets/js/faq.js"></script>
+  <script src="assets/js/countdown.js"></script>
+  <script src="assets/js/scroll-progress.js"></script>
 </body>
 </html>
