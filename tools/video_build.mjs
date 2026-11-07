@@ -15,6 +15,7 @@ const inicioSeg = cap.inicio / 1000;
 
 const INTRO = 4;
 const OUTRO = 5;
+const STILL = 7;
 const TARGET = 130;
 
 function srtTime(seg) {
@@ -33,7 +34,7 @@ for (let i = 0; i < frames.length; i++) {
 const suma = durations.reduce((a, b) => a + b, 0);
 const factor = Math.max(1, (TARGET - INTRO - OUTRO) / suma);
 const framesTotal = suma * factor;
-const total = INTRO + framesTotal + OUTRO;
+const total = INTRO + framesTotal + STILL + OUTRO;
 
 const lineas = [];
 lineas.push(`file '${path.join(WORK, "..", "media", "video_intro.jpg").replace(/\\/g, "/")}'`);
@@ -42,6 +43,8 @@ frames.forEach((f, i) => {
   lineas.push(`file '${f.archivo.replace(/\\/g, "/")}'`);
   lineas.push(`duration ${(durations[i] * factor).toFixed(4)}`);
 });
+lineas.push(`file '${path.join(WORK, "..", "media", "evidencia_network.jpg").replace(/\\/g, "/")}'`);
+lineas.push(`duration ${STILL.toFixed(3)}`);
 lineas.push(`file '${path.join(WORK, "..", "media", "video_outro.jpg").replace(/\\/g, "/")}'`);
 lineas.push(`duration ${OUTRO.toFixed(3)}`);
 lineas.push(`file '${path.join(WORK, "..", "media", "video_outro.jpg").replace(/\\/g, "/")}'`);
@@ -50,13 +53,14 @@ fs.writeFileSync(path.join(WORK, "lista.txt"), lineas.join("\n") + "\n", "utf8")
 const mapa = (t) => INTRO + (inicioSeg + t - ts0) * factor;
 
 const subs = [];
-subs.push({ a: 0.3, b: INTRO - 0.3, t: "ResumIA - Demostracion del modulo de persistencia (E3.2)" });
+subs.push({ a: 0.3, b: INTRO - 0.3, t: "ResumIA - Demostración del módulo de persistencia (E3.2)" });
 cap.fases.forEach((f, i) => {
   const a = Math.max(INTRO + 0.3, mapa(f.start));
   const b = i < cap.fases.length - 1 ? Math.min(INTRO + framesTotal - 0.3, mapa(cap.fases[i + 1].start) - 0.2) : INTRO + framesTotal - 0.3;
   subs.push({ a, b, t: f.texto });
 });
-subs.push({ a: INTRO + framesTotal + 0.5, b: total - 0.5, t: "github.com/kanonufo/landing-page-ia" });
+subs.push({ a: INTRO + framesTotal + 0.3, b: INTRO + framesTotal + STILL - 0.3, t: "El POST llega al servicio externo y responde 200" });
+subs.push({ a: INTRO + framesTotal + STILL + 0.5, b: total - 0.5, t: "github.com/kanonufo/landing-page-ia" });
 
 let srt = "";
 subs.forEach((s, i) => {
