@@ -1,0 +1,35 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" version="1.1" width="1240" height="1754" viewBox="0 0 1240 1754">
+  <title>Portada E3.0 - Portafolio GitHub profesional</title>
+  <desc>Portada de la entrega E3.0: repositorio, GitHub Pages y reflexión del proceso.</desc>
+  <rect x="0" y="0" width="1240" height="1754" fill="#0f172a"/>
+  <g fill="none" stroke-linecap="round">
+    <circle cx="1100" cy="180" r="240" stroke="#2563eb" stroke-width="3" opacity="0.5"/>
+    <circle cx="1100" cy="180" r="170" stroke="#1d4ed8" stroke-width="2" opacity="0.4"/>
+    <circle cx="1100" cy="180" r="100" stroke="#f59e0b" stroke-width="2" opacity="0.55"/>
+    <path d="M 80 1500 A 260 260 0 0 1 340 1240" stroke="#f59e0b" stroke-width="4" opacity="0.5"/>
+    <path d="M 80 1560 A 320 320 0 0 1 400 1240" stroke="#2563eb" stroke-width="3" opacity="0.4"/>
+    <path d="M 80 1620 A 380 380 0 0 1 460 1240" stroke="#1d4ed8" stroke-width="2" opacity="0.35"/>
+    <line x1="120" y1="120" x2="120" y2="420" stroke="#2563eb" stroke-width="3" opacity="0.45"/>
+    <line x1="160" y1="180" x2="160" y2="400" stroke="#1d4ed8" stroke-width="2" opacity="0.35"/>
+    <circle cx="180" cy="1560" r="14" fill="#2563eb" stroke="none" opacity="0.6"/>
+    <circle cx="230" cy="1620" r="9" fill="#f59e0b" stroke="none" opacity="0.7"/>
+    <line x1="1000" y1="1400" x2="1180" y2="1220" stroke="#2563eb" stroke-width="2" opacity="0.35"/>
+    <line x1="1040" y1="1440" x2="1180" y2="1300" stroke="#1d4ed8" stroke-width="2" opacity="0.3"/>
+  </g>
+  <text x="620" y="330" font-family="Inter, Segoe UI, Arial, sans-serif" font-size="150" font-weight="800" fill="#f59e0b" text-anchor="middle">E3.0</text>
+  <text x="620" y="590" font-family="Inter, Segoe UI, Arial, sans-serif" font-size="72" font-weight="700" fill="#ffffff" text-anchor="middle">Portafolio GitHub profesional</text>
+  <line x1="520" y1="650" x2="720" y2="650" stroke="#f59e0b" stroke-width="3"/>
+  <text x="620" y="730" font-family="Inter, Segoe UI, Arial, sans-serif" font-size="30" fill="#f8fafc" text-anchor="middle">Repositorio, GitHub Pages y reflexión del proceso</text>
+  <g font-family="Inter, Segoe UI, Arial, sans-serif" font-size="22" text-anchor="middle">
+    <rect x="290" y="900" width="200" height="70" rx="35" fill="none" stroke="#2563eb" stroke-width="2"/>
+    <text x="390" y="944" fill="#f8fafc">10+ commits</text>
+    <rect x="520" y="900" width="200" height="70" rx="35" fill="none" stroke="#2563eb" stroke-width="2"/>
+    <text x="620" y="944" fill="#f8fafc">README</text>
+    <rect x="750" y="900" width="200" height="70" rx="35" fill="none" stroke="#2563eb" stroke-width="2"/>
+    <text x="850" y="944" fill="#f8fafc">GitHub Project</text>
+  </g>
+  <text x="620" y="1560" font-family="Inter, Segoe UI, Arial, sans-serif" font-size="18" font-weight="600" fill="#e2e8f0" letter-spacing="2" text-anchor="middle">UNIVERSIDAD PEDAGÓGICA Y TECNOLÓGICA DE COLOMBIA</text>
+  <text x="620" y="1592" font-family="Inter, Segoe UI, Arial, sans-serif" font-size="16" fill="#e2e8f0" text-anchor="middle">Tecnología de Programación de Sistemas Informaticos</text>
+  <text x="620" y="1624" font-family="Inter, Segoe UI, Arial, sans-serif" font-size="16" fill="#f59e0b" text-anchor="middle">Unidad 3 - DoK 4</text>
+</svg>

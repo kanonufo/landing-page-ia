@@ -1,0 +1,33 @@
+{
+  "name": "resumia-landing",
+  "version": "3.0.0",
+  "private": true,
+  "description": "Landing page de captura de leads para ResumIA, una beta ficticia que resume PDFs con IA.",
+  "main": "index.html",
+  "scripts": {
+    "serve": "python -m http.server 8788",
+    "capture": "node tools/capture.mjs",
+    "audit": "node tools/audit_run.mjs",
+    "video:capture": "node tools/video_capture.mjs",
+    "video:build": "node tools/video_build.mjs",
+    "docs:build": "node tools/build_docs.mjs"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/kanonufo/landing-page-ia.git"
+  },
+  "keywords": [
+    "landing-page",
+    "html5",
+    "css3",
+    "javascript",
+    "accessibility",
+    "localstorage"
+  ],
+  "author": "Juan Pablo Barrero",
+  "license": "MIT",
+  "devDependencies": {
+    "lighthouse": "^13.6.0",
+    "playwright": "^1.65.0"
+  }
+}

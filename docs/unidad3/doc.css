@@ -1,0 +1,174 @@
+﻿@page {
+  size: A4;
+  margin: 16mm 15mm 17mm 15mm;
+}
+
+html {
+  font-size: 10.4pt;
+}
+
+body {
+  margin: 0;
+  font-family: "Segoe UI", Arial, Helvetica, sans-serif;
+  color: #1f2937;
+  line-height: 1.55;
+}
+
+h1 {
+  font-size: 20pt;
+  line-height: 1.2;
+  color: #0f172a;
+  border-bottom: 3px solid #2563eb;
+  padding-bottom: 6px;
+  margin: 0 0 14px;
+}
+
+h2 {
+  font-size: 14pt;
+  color: #1d4ed8;
+  margin: 20px 0 8px;
+  page-break-after: avoid;
+}
+
+h3 {
+  font-size: 11.6pt;
+  color: #0f172a;
+  margin: 14px 0 6px;
+  page-break-after: avoid;
+}
+
+p {
+  margin: 0 0 8px;
+  text-align: justify;
+}
+
+ul,
+ol {
+  margin: 0 0 10px 18px;
+  padding: 0;
+}
+
+li {
+  margin-bottom: 3px;
+}
+
+strong {
+  color: #0f172a;
+}
+
+a {
+  color: #1d4ed8;
+  text-decoration: none;
+}
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 8.5pt;
+  margin: 10px 0 14px;
+}
+
+th {
+  background: #0f172a;
+  color: #ffffff;
+  text-align: left;
+  padding: 5px 6px;
+  font-weight: 600;
+}
+
+td {
+  border: 1px solid #cbd5e1;
+  padding: 4px 6px;
+  vertical-align: top;
+}
+
+tr {
+  page-break-inside: avoid;
+}
+
+code {
+  font-family: Consolas, "Courier New", monospace;
+  font-size: 8.7pt;
+  background: #f1f5f9;
+  color: #0f172a;
+  padding: 1px 3px;
+  border-radius: 3px;
+}
+
+pre {
+  background: #0f172a;
+  color: #e2e8f0;
+  padding: 9px 10px;
+  border-radius: 6px;
+  font-size: 8.1pt;
+  line-height: 1.4;
+  white-space: pre-wrap;
+  word-break: break-word;
+  page-break-inside: avoid;
+  break-inside: avoid;
+  margin: 8px 0 12px;
+}
+
+pre code {
+  background: none;
+  color: inherit;
+  padding: 0;
+  font-size: inherit;
+}
+
+.portada {
+  width: 100%;
+  height: 262mm;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  page-break-after: always;
+}
+
+.portada img {
+  max-width: 100%;
+  max-height: 100%;
+  object-fit: contain;
+}
+
+figure {
+  margin: 10px 0 14px;
+  text-align: center;
+  page-break-inside: avoid;
+  break-inside: avoid;
+}
+
+figure img {
+  max-width: 100%;
+  max-height: 212mm;
+  width: auto;
+  height: auto;
+  border: 1px solid #cbd5e1;
+  border-radius: 4px;
+}
+
+figcaption {
+  margin-top: 4px;
+  font-size: 8.4pt;
+  color: #475569;
+  font-style: italic;
+}
+
+blockquote {
+  margin: 10px 0;
+  padding: 6px 12px;
+  border-left: 3px solid #f59e0b;
+  background: #f8fafc;
+  color: #334155;
+}
+
+hr {
+  border: 0;
+  border-top: 1px solid #e2e8f0;
+  margin: 16px 0;
+}
+
+h1 + p,
+h2 + p {
+  margin-top: 4px;
+}

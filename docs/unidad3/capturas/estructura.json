@@ -1,0 +1,22 @@
+{
+  "titulo": "ResumIA | Resume PDFs complejos en minutos con IA",
+  "secciones": [
+    "",
+    "beneficios",
+    "como-funciona",
+    "testimonios",
+    "faq",
+    "acceso",
+    "registro",
+    "privacidad"
+  ],
+  "tokens": 32,
+  "scripts": [
+    "assets/js/core.js",
+    "assets/js/form-persistence.js",
+    "assets/js/faq.js",
+    "assets/js/countdown.js",
+    "assets/js/scroll-progress.js"
+  ],
+  "faqPreguntas": 4
+}

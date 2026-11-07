@@ -1,0 +1,84 @@
+﻿<svg xmlns="http://www.w3.org/2000/svg" version="1.1" width="1400" height="900" viewBox="0 0 1400 900" font-family="Inter, 'Segoe UI', Arial, sans-serif" role="img">
+  <title>Sistema de componentes ResumIA</title>
+  <desc>Arquitectura en tres capas: tokens, componentes e integracion.</desc>
+  <defs>
+    <marker id="flecha" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
+      <path d="M0,0 L10,5 L0,10 Z" fill="#2563eb"/>
+    </marker>
+  </defs>
+
+  <rect x="0" y="0" width="1400" height="900" fill="#f8fafc"/>
+
+  <text x="700" y="68" text-anchor="middle" font-size="32" font-weight="700" fill="#0f172a">Sistema de componentes ResumIA</text>
+  <rect x="560" y="82" width="280" height="4" rx="2" fill="#2563eb"/>
+  <text x="700" y="116" text-anchor="middle" font-size="15" fill="#475569">Arquitectura en tres capas con dependencia unidireccional</text>
+
+  <line x1="480" y1="334" x2="480" y2="384" stroke="#2563eb" stroke-width="3" marker-end="url(#flecha)"/>
+  <text x="496" y="364" font-size="12" fill="#475569">consume</text>
+
+  <line x1="480" y1="574" x2="480" y2="624" stroke="#2563eb" stroke-width="3" marker-end="url(#flecha)"/>
+  <text x="496" y="604" font-size="12" fill="#475569">empaqueta</text>
+
+  <g>
+    <rect x="80" y="150" width="800" height="180" rx="14" fill="#ffffff" stroke="#e2e8f0" stroke-width="2"/>
+    <circle cx="122" cy="190" r="18" fill="#2563eb"/>
+    <text x="122" y="196" text-anchor="middle" font-size="16" font-weight="700" fill="#ffffff">1</text>
+    <text x="152" y="197" font-size="20" font-weight="700" fill="#0f172a">Design tokens</text>
+    <text x="152" y="222" font-size="13" fill="#475569">Custom properties globales reutilizables</text>
+    <rect x="112" y="256" width="84" height="34" rx="17" fill="#f8fafc" stroke="#e2e8f0" stroke-width="1.5"/>
+    <text x="154" y="278" text-anchor="middle" font-size="14" fill="#1d4ed8">Colores</text>
+    <rect x="208" y="256" width="106" height="34" rx="17" fill="#f8fafc" stroke="#e2e8f0" stroke-width="1.5"/>
+    <text x="261" y="278" text-anchor="middle" font-size="14" fill="#1d4ed8">Tipografía</text>
+    <rect x="326" y="256" width="98" height="34" rx="17" fill="#f8fafc" stroke="#e2e8f0" stroke-width="1.5"/>
+    <text x="375" y="278" text-anchor="middle" font-size="14" fill="#1d4ed8">Espaciado</text>
+    <rect x="436" y="256" width="76" height="34" rx="17" fill="#f8fafc" stroke="#e2e8f0" stroke-width="1.5"/>
+    <text x="474" y="278" text-anchor="middle" font-size="14" fill="#1d4ed8">Radios</text>
+    <rect x="524" y="256" width="120" height="34" rx="17" fill="#f8fafc" stroke="#e2e8f0" stroke-width="1.5"/>
+    <text x="584" y="278" text-anchor="middle" font-size="14" fill="#1d4ed8">Transiciones</text>
+  </g>
+
+  <g>
+    <rect x="80" y="390" width="800" height="180" rx="14" fill="#ffffff" stroke="#e2e8f0" stroke-width="2"/>
+    <circle cx="122" cy="430" r="18" fill="#f59e0b"/>
+    <text x="122" y="436" text-anchor="middle" font-size="16" font-weight="700" fill="#ffffff">2</text>
+    <text x="152" y="437" font-size="20" font-weight="700" fill="#0f172a">Componentes</text>
+    <text x="152" y="462" font-size="13" fill="#475569">Bloques autónomos de interfaz</text>
+    <rect x="112" y="496" width="64" height="34" rx="17" fill="#f8fafc" stroke="#e2e8f0" stroke-width="1.5"/>
+    <text x="144" y="518" text-anchor="middle" font-size="14" fill="#1d4ed8">Hero</text>
+    <rect x="188" y="496" width="120" height="34" rx="17" fill="#f8fafc" stroke="#e2e8f0" stroke-width="1.5"/>
+    <text x="248" y="518" text-anchor="middle" font-size="14" fill="#1d4ed8">FAQ acordeón</text>
+    <rect x="320" y="496" width="164" height="34" rx="17" fill="#f8fafc" stroke="#e2e8f0" stroke-width="1.5"/>
+    <text x="402" y="518" text-anchor="middle" font-size="14" fill="#1d4ed8">Contador regresivo</text>
+    <rect x="496" y="496" width="172" height="34" rx="17" fill="#f8fafc" stroke="#e2e8f0" stroke-width="1.5"/>
+    <text x="582" y="518" text-anchor="middle" font-size="14" fill="#1d4ed8">Progreso de lectura</text>
+  </g>
+
+  <g>
+    <rect x="80" y="630" width="800" height="180" rx="14" fill="#ffffff" stroke="#e2e8f0" stroke-width="2"/>
+    <circle cx="122" cy="670" r="18" fill="#1d4ed8"/>
+    <text x="122" y="676" text-anchor="middle" font-size="16" font-weight="700" fill="#ffffff">3</text>
+    <text x="152" y="677" font-size="20" font-weight="700" fill="#0f172a">Integración</text>
+    <text x="152" y="702" font-size="13" fill="#475569">Encapsulamiento y arranque en la página</text>
+    <rect x="112" y="736" width="310" height="34" rx="17" fill="#f8fafc" stroke="#e2e8f0" stroke-width="1.5"/>
+    <text x="267" y="758" text-anchor="middle" font-size="14" fill="#1d4ed8">Clase contenedora con prefijo resumia-</text>
+    <rect x="434" y="736" width="64" height="34" rx="17" fill="#f8fafc" stroke="#e2e8f0" stroke-width="1.5"/>
+    <text x="466" y="758" text-anchor="middle" font-size="14" fill="#1d4ed8">IIFE</text>
+    <rect x="510" y="736" width="205" height="34" rx="17" fill="#f8fafc" stroke="#e2e8f0" stroke-width="1.5"/>
+    <text x="612" y="758" text-anchor="middle" font-size="14" fill="#1d4ed8">Script al final del body</text>
+  </g>
+
+  <path d="M 880 480 H 932" stroke="#f59e0b" stroke-width="2" stroke-dasharray="5 5" fill="none"/>
+  <circle cx="938" cy="480" r="4" fill="#f59e0b"/>
+
+  <g>
+    <rect x="940" y="355" width="400" height="210" rx="14" fill="#ffffff" stroke="#f59e0b" stroke-width="2"/>
+    <text x="970" y="392" font-size="13" font-weight="700" letter-spacing="2" fill="#f59e0b">NOTA</text>
+    <text x="970" y="432" font-size="17" fill="#0f172a">Cada componente consume al menos</text>
+    <text x="970" y="462" font-size="19" font-weight="700" fill="#1d4ed8">3 custom properties</text>
+    <line x1="970" y1="486" x2="1310" y2="486" stroke="#e2e8f0" stroke-width="1.5"/>
+    <text x="970" y="514" font-size="13" fill="#475569">Las variables se declaran una sola vez en la capa</text>
+    <text x="970" y="534" font-size="13" fill="#475569">de tokens y se heredan hacia los bloques finales.</text>
+  </g>
+
+  <text x="700" y="862" text-anchor="middle" font-size="12" fill="#475569">Flujo de dependencias: tokens &#8594; componentes &#8594; integración</text>
+</svg>

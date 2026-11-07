@@ -1,0 +1,75 @@
+﻿<svg xmlns="http://www.w3.org/2000/svg" version="1.1" width="1120" height="840" viewBox="0 0 1120 840" encoding="UTF-8">
+  <title>Del PDF al resumen con IA</title>
+  <desc>Diagrama editorial que muestra a la izquierda una tarjeta que representa un documento PDF, en el centro un nodo circular azul etiquetado IA conectado con flechas, y a la derecha una tarjeta de resumen con vinetas naranjas.</desc>
+  <defs>
+    <marker id="flechaAzul" markerWidth="10" markerHeight="8" refX="8" refY="4" orient="auto" markerUnits="userSpaceOnUse">
+      <path d="M0,0 L8,4 L0,8 Z" fill="#2563eb"/>
+    </marker>
+    <linearGradient id="fondoSuave" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#f8fafc"/>
+      <stop offset="1" stop-color="#e2e8f0" stop-opacity="0.5"/>
+    </linearGradient>
+  </defs>
+
+  <rect x="0" y="0" width="1120" height="840" fill="url(#fondoSuave)"/>
+
+  <g fill="none" stroke="#e2e8f0" stroke-width="2">
+    <circle cx="90" cy="110" r="56"/>
+    <rect x="960" y="640" width="120" height="120" transform="rotate(15 1020 700)"/>
+    <circle cx="1030" cy="130" r="34"/>
+    <path d="M 60 700 L 140 660 L 200 710 L 130 740 Z"/>
+    <line x1="560" y1="60" x2="640" y2="120"/>
+    <line x1="480" y1="770" x2="560" y2="730"/>
+  </g>
+
+  <text x="560" y="88" text-anchor="middle" font-family="Inter, 'Segoe UI', Arial, sans-serif" font-size="40" font-weight="700" fill="#0f172a">Del PDF al resumen con IA</text>
+  <rect x="470" y="110" width="180" height="6" rx="3" fill="#f59e0b"/>
+
+  <g>
+    <rect x="80" y="200" width="280" height="380" rx="18" fill="#ffffff" stroke="#e2e8f0" stroke-width="2"/>
+    <rect x="120" y="248" width="200" height="14" rx="7" fill="#475569" opacity="0.85"/>
+    <rect x="120" y="284" width="200" height="8" rx="4" fill="#e2e8f0"/>
+    <rect x="120" y="306" width="184" height="8" rx="4" fill="#e2e8f0"/>
+    <rect x="120" y="328" width="196" height="8" rx="4" fill="#e2e8f0"/>
+    <rect x="120" y="350" width="160" height="8" rx="4" fill="#e2e8f0"/>
+    <rect x="120" y="386" width="200" height="8" rx="4" fill="#e2e8f0"/>
+    <rect x="120" y="408" width="188" height="8" rx="4" fill="#e2e8f0"/>
+    <rect x="120" y="430" width="176" height="8" rx="4" fill="#e2e8f0"/>
+    <rect x="120" y="466" width="200" height="8" rx="4" fill="#e2e8f0"/>
+    <rect x="120" y="488" width="152" height="8" rx="4" fill="#e2e8f0"/>
+    <rect x="232" y="524" width="88" height="30" rx="8" fill="#2563eb"/>
+    <text x="276" y="545" text-anchor="middle" font-family="Inter, 'Segoe UI', Arial, sans-serif" font-size="16" font-weight="700" fill="#ffffff">PDF</text>
+  </g>
+
+  <path d="M 372 390 C 410 390 430 390 462 400" fill="none" stroke="#2563eb" stroke-width="6" marker-end="url(#flechaAzul)"/>
+
+  <g>
+    <circle cx="560" cy="420" r="88" fill="#2563eb"/>
+    <circle cx="560" cy="420" r="104" fill="none" stroke="#1d4ed8" stroke-width="3" opacity="0.35"/>
+    <circle cx="560" cy="420" r="118" fill="none" stroke="#1d4ed8" stroke-width="2" opacity="0.18"/>
+    <text x="560" y="434" text-anchor="middle" font-family="Inter, 'Segoe UI', Arial, sans-serif" font-size="44" font-weight="800" fill="#ffffff">IA</text>
+  </g>
+
+  <path d="M 658 400 C 690 390 710 390 748 390" fill="none" stroke="#2563eb" stroke-width="6" marker-end="url(#flechaAzul)"/>
+
+  <g>
+    <rect x="760" y="200" width="280" height="380" rx="18" fill="#ffffff" stroke="#e2e8f0" stroke-width="2"/>
+    <rect x="800" y="248" width="180" height="14" rx="7" fill="#475569" opacity="0.85"/>
+    <circle cx="812" cy="300" r="7" fill="#f59e0b"/>
+    <rect x="832" y="294" width="164" height="10" rx="5" fill="#e2e8f0"/>
+    <circle cx="812" cy="340" r="7" fill="#f59e0b"/>
+    <rect x="832" y="334" width="150" height="10" rx="5" fill="#e2e8f0"/>
+    <circle cx="812" cy="380" r="7" fill="#f59e0b"/>
+    <rect x="832" y="374" width="172" height="10" rx="5" fill="#e2e8f0"/>
+    <circle cx="812" cy="420" r="7" fill="#f59e0b"/>
+    <rect x="832" y="414" width="140" height="10" rx="5" fill="#e2e8f0"/>
+    <circle cx="812" cy="460" r="7" fill="#f59e0b"/>
+    <rect x="832" y="454" width="158" height="10" rx="5" fill="#e2e8f0"/>
+    <rect x="800" y="524" width="128" height="30" rx="8" fill="#f59e0b"/>
+    <text x="864" y="545" text-anchor="middle" font-family="Inter, 'Segoe UI', Arial, sans-serif" font-size="16" font-weight="700" fill="#ffffff">Resumen</text>
+  </g>
+
+  <text x="220" y="636" text-anchor="middle" font-family="Inter, 'Segoe UI', Arial, sans-serif" font-size="18" font-weight="600" fill="#475569">Documento de entrada</text>
+  <text x="560" y="578" text-anchor="middle" font-family="Inter, 'Segoe UI', Arial, sans-serif" font-size="18" font-weight="600" fill="#475569">Procesamiento</text>
+  <text x="900" y="636" text-anchor="middle" font-family="Inter, 'Segoe UI', Arial, sans-serif" font-size="18" font-weight="600" fill="#475569">Ideas clave</text>
+</svg>

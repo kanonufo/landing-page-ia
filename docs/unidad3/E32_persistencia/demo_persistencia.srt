@@ -1,0 +1,32 @@
+1
+00:00:00,300 --> 00:00:03,700
+ResumIA - Demostracion del modulo de persistencia (E3.2)
+
+2
+00:00:04,300 --> 00:00:27,432
+Recorrido por la landing page publicada
+
+3
+00:00:27,632 --> 00:01:03,434
+Cada campo se guarda en localStorage mientras se escribe
+
+4
+00:01:03,634 --> 00:01:18,450
+Al recargar, el borrador se restaura automáticamente
+
+5
+00:01:18,650 --> 00:01:31,665
+El formulario se envía al servicio externo y se confirma
+
+6
+00:01:31,865 --> 00:01:45,129
+El borrador se limpia y el usuario queda marcado como convertido
+
+7
+00:01:45,329 --> 00:02:04,700
+En la siguiente visita se muestra el agradecimiento personalizado
+
+8
+00:02:05,500 --> 00:02:09,500
+github.com/kanonufo/landing-page-ia
+
