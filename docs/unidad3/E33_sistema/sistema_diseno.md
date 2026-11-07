@@ -1,4 +1,4 @@
-<div class="portada"><img src="../media/portada_e33.svg" alt="Portada del entregable E3.3"></div>
+﻿<div class="portada"><img src="../media/portada_e33.svg" alt="Portada del entregable E3.3"></div>
 
 # E3.3 — Sistema de componentes: biblioteca de snippets documentada
 
@@ -83,6 +83,8 @@ IIFE y script al final del body.
 | 4 | Progreso + volver arriba | Navegación y utilidad | `resumia-progress`, `resumia-top` | IIFE en `assets/js/scroll-progress.js`; `requestAnimationFrame`. |
 
 ## Fase 2 — Generación e integración
+
+CREDA se usa en este documento como **Contexto, Rol, Ejemplos, Detalles y Acción**.
 
 ### Snippet 1 — Hero (presentación)
 

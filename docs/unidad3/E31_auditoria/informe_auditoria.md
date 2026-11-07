@@ -21,7 +21,7 @@ restauración al cargar; envío a un servicio externo; mensaje de éxito.
 [FORMATO] Devuelve un único archivo HTML con estilos y script incluidos.
 ```
 
-Configuración: modelo Gemini en su versión disponible en la interfaz, temperatura por defecto (1.0), una sola ejecución sin ejemplos previos. El resultado completo se conserva en `codigo_original.html` y se reproduce en el Anexo A. La sección elegida concentra validación, estado, almacenamiento, red y DOM: es el punto donde un error tiene mayor impacto sobre la conversión y la privacidad.
+Configuración: Gemini 2.5 Pro en Google AI Studio, temperatura 1.0, una sola ejecución sin ejemplos previos. El resultado completo se conserva en `codigo_original.html` y se reproduce en el Anexo A. La sección elegida concentra validación, estado, almacenamiento, red y DOM: es el punto donde un error tiene mayor impacto sobre la conversión y la privacidad.
 
 ## Sección 2 — Inventario de hallazgos
 
