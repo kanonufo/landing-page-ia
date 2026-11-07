@@ -1,0 +1,83 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" version="1.1" width="1400" height="900" viewBox="0 0 1400 900" font-family="Inter, 'Segoe UI', Arial, sans-serif" role="img">
+  <title>Ciclo AVIA de auditoría</title>
+  <desc>Ciclo de cuatro fases con tres hallazgos de auditoría destacados.</desc>
+  <defs>
+    <marker id="flecha" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="5.5" markerHeight="5.5" orient="auto">
+      <path d="M0,0 L10,5 L0,10 z" fill="#1d4ed8"/>
+    </marker>
+  </defs>
+
+  <rect x="0" y="0" width="1400" height="900" fill="#f8fafc"/>
+
+  <text x="700" y="72" text-anchor="middle" font-size="42" font-weight="700" fill="#0f172a">Ciclo AVIA de auditoría</text>
+  <text x="700" y="104" text-anchor="middle" font-size="17" fill="#475569">Analizar · Verificar · Iterar · Ajustar</text>
+
+  <circle cx="700" cy="410" r="200" fill="none" stroke="#e2e8f0" stroke-width="2" stroke-dasharray="6 9"/>
+
+  <path d="M 794 233 A 200 200 0 0 1 877 316" fill="none" stroke="#1d4ed8" stroke-width="4" marker-end="url(#flecha)"/>
+  <path d="M 877 504 A 200 200 0 0 1 794 587" fill="none" stroke="#1d4ed8" stroke-width="4" marker-end="url(#flecha)"/>
+  <path d="M 606 587 A 200 200 0 0 1 523 504" fill="none" stroke="#1d4ed8" stroke-width="4" marker-end="url(#flecha)"/>
+  <path d="M 523 316 A 200 200 0 0 1 606 233" fill="none" stroke="#1d4ed8" stroke-width="4" marker-end="url(#flecha)"/>
+
+  <circle cx="700" cy="410" r="76" fill="#f59e0b"/>
+  <text x="700" y="406" text-anchor="middle" font-size="21" font-weight="700" fill="#ffffff">Evidencia</text>
+  <text x="700" y="430" text-anchor="middle" font-size="14" font-weight="600" fill="#ffffff">antes / después</text>
+
+  <g>
+    <circle cx="700" cy="210" r="80" fill="#ffffff" stroke="#2563eb" stroke-width="3.5"/>
+    <text x="700" y="204" text-anchor="middle" font-size="21" font-weight="700" fill="#1d4ed8">Analizar</text>
+    <text x="700" y="228" text-anchor="middle" font-size="11" fill="#475569">leer el código</text>
+    <text x="700" y="243" text-anchor="middle" font-size="11" fill="#475569">antes de</text>
+    <text x="700" y="258" text-anchor="middle" font-size="11" fill="#475569">ejecutarlo</text>
+  </g>
+
+  <g>
+    <circle cx="900" cy="410" r="80" fill="#ffffff" stroke="#2563eb" stroke-width="3.5"/>
+    <text x="900" y="404" text-anchor="middle" font-size="21" font-weight="700" fill="#1d4ed8">Verificar</text>
+    <text x="900" y="428" text-anchor="middle" font-size="11" fill="#475569">consola DevTools</text>
+    <text x="900" y="443" text-anchor="middle" font-size="11" fill="#475569">y errores reales</text>
+  </g>
+
+  <g>
+    <circle cx="700" cy="610" r="80" fill="#ffffff" stroke="#2563eb" stroke-width="3.5"/>
+    <text x="700" y="604" text-anchor="middle" font-size="21" font-weight="700" fill="#1d4ed8">Iterar</text>
+    <text x="700" y="628" text-anchor="middle" font-size="11" fill="#475569">prompts de corrección</text>
+    <text x="700" y="643" text-anchor="middle" font-size="11" fill="#475569">y cambios manuales</text>
+  </g>
+
+  <g>
+    <circle cx="500" cy="410" r="80" fill="#ffffff" stroke="#2563eb" stroke-width="3.5"/>
+    <text x="500" y="400" text-anchor="middle" font-size="21" font-weight="700" fill="#1d4ed8">Ajustar</text>
+    <text x="500" y="424" text-anchor="middle" font-size="11" fill="#475569">actualizar el</text>
+    <text x="500" y="439" text-anchor="middle" font-size="11" fill="#475569">prompt base para</text>
+    <text x="500" y="454" text-anchor="middle" font-size="11" fill="#475569">evitar recurrencia</text>
+  </g>
+
+  <rect x="630" y="702" width="140" height="34" rx="17" fill="#0f172a"/>
+  <text x="700" y="724" text-anchor="middle" font-size="15" font-weight="600" fill="#ffffff">Hallazgos</text>
+
+  <g>
+    <rect x="60" y="752" width="380" height="112" rx="14" fill="#ffffff" stroke="#e2e8f0" stroke-width="2"/>
+    <circle cx="102" cy="808" r="22" fill="#2563eb"/>
+    <text x="102" y="814" text-anchor="middle" font-size="15" font-weight="700" fill="#ffffff">01</text>
+    <text x="140" y="802" font-size="19" font-weight="700" fill="#0f172a">XSS por innerHTML</text>
+    <text x="140" y="828" font-size="13" fill="#475569">Entrada no saneada inyectada en el DOM</text>
+  </g>
+
+  <g>
+    <rect x="510" y="752" width="380" height="112" rx="14" fill="#ffffff" stroke="#e2e8f0" stroke-width="2"/>
+    <circle cx="552" cy="808" r="22" fill="#2563eb"/>
+    <text x="552" y="814" text-anchor="middle" font-size="15" font-weight="700" fill="#ffffff">02</text>
+    <text x="590" y="802" font-size="19" font-weight="700" fill="#0f172a">XHR síncrono obsoleto</text>
+    <text x="590" y="828" font-size="13" fill="#475569">Llamada bloqueante del hilo principal</text>
+  </g>
+
+  <g>
+    <rect x="960" y="752" width="380" height="112" rx="14" fill="#ffffff" stroke="#e2e8f0" stroke-width="2"/>
+    <circle cx="1002" cy="808" r="22" fill="#2563eb"/>
+    <text x="1002" y="814" text-anchor="middle" font-size="15" font-weight="700" fill="#ffffff">03</text>
+    <text x="1040" y="802" font-size="19" font-weight="700" fill="#0f172a">Listeners duplicados</text>
+    <text x="1040" y="828" font-size="13" fill="#475569">Eventos añadidos otra vez en cada ciclo</text>
+  </g>
+</svg>

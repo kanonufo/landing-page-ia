@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>ResumIA — Registro (borrador generado por IA)</title>
+  <style>
+    @import url("https://fonts.googleapis.com/css2?family=Inter:wght@400;600&display=swap");
+    body { font-family: Inter, Arial, sans-serif; background: #ffffff; color: #333; margin: 40px; }
+    h1 { font-size: 28px; }
+    input, select { display: block; width: 320px; padding: 10px; margin: 8px 0; }
+    button { padding: 10px 18px; background: #2563eb; color: white; border: 0; cursor: pointer; }
+    #saludo { margin-top: 20px; font-weight: 600; }
+  </style>
+</head>
+<body>
+  <h1>Consigue tu acceso anticipado</h1>
+
+  <form id="form" onsubmit="enviarFormulario(); return false;">
+    <input id="nombre" placeholder="Nombre" required>
+    <input id="email" placeholder="Correo" required>
+    <select id="rol">
+      <option value="">Perfil</option>
+      <option value="estudiante">Estudiante</option>
+      <option value="docente">Docente</option>
+    </select>
+    <input type="checkbox" id="consentimiento">
+    <label for="consentimiento">Acepto la política</label>
+    <button type="submit">Quiero mi acceso</button>
+  </form>
+
+  <div id="saludo"></div>
+
+  <script>
+    var nombre = document.getElementById("nombre");
+    var email = document.getElementById("email");
+    var rol = document.getElementById("rol");
+    var consentimiento = document.getElementById("consentimiento");
+
+    // Guarda los datos mientras el usuario escribe.
+    function guardar() {
+      localStorage.setItem("nombre", nombre.value);
+      localStorage.setItem("email", email.value);
+      localStorage.setItem("rol", rol.value);
+    }
+
+    // Pinta un saludo en vivo y vuelve a enganchar el listener.
+    function render() {
+      document.getElementById("saludo").innerHTML = "Hola " + nombre.value;
+      nombre.addEventListener("keyup", guardar);
+    }
+
+    nombre.addEventListener("keyup", function (e) {
+      if (e.keyCode == 13) {
+        enviarFormulario();
+      }
+      render();
+    });
+
+    email.addEventListener("keyup", guardar);
+    rol.addEventListener("change", guardar);
+
+    // Envía el formulario al servicio externo.
+    function enviarFormulario() {
+      console.log("Enviando datos de " + email.value + " / consentimiento: " + consentimiento.checked);
+
+      if (email.value == "") {
+        alert("Falta el correo");
+        return;
+      }
+
+      var xhr = new XMLHttpRequest();
+      xhr.open("POST", "https://httpbin.org/post", false);
+      xhr.setRequestHeader("Content-Type", "application/json");
+      xhr.send(JSON.stringify({
+        nombre: nombre.value,
+        email: email.value,
+        rol: rol.value
+      }));
+
+      document.write("<p>Registro completado</p>");
+      localStorage.setItem("convertido", "1");
+      document.getElementById("form").reset();
+    }
+
+    // Efecto de cabecera al hacer scroll.
+    window.addEventListener("scroll", function () {
+      var alto = document.body.offsetHeight;
+      var y = window.scrollY;
+      document.body.style.background = y > alto / 2 ? "#f8fafc" : "#ffffff";
+    });
+
+    // Restaura los datos guardados.
+    nombre.value = localStorage.getItem("nombre");
+    email.value = localStorage.getItem("email");
+    rol.value = localStorage.getItem("rol");
+  </script>
+</body>
+</html>

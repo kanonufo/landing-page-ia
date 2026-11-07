@@ -1,0 +1,17 @@
+{
+  "original": [
+    {
+      "tipo": "log",
+      "texto": "Enviando datos de elena@example.com / consentimiento: true"
+    },
+    {
+      "tipo": "pageerror",
+      "texto": "Cannot read properties of null (reading 'reset')"
+    },
+    {
+      "tipo": "warning",
+      "texto": "Form submission canceled because the form is not connected"
+    }
+  ],
+  "corregido": []
+}
