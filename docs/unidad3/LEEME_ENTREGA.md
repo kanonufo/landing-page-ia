@@ -11,7 +11,7 @@
 | E3.1 | `E31_auditoria/informe_auditoria.pdf` + `codigo_original.html` + `codigo_corregido.html` | Listo. 14 hallazgos, ciclo AVIA, comparación antes/después y protocolo de 12 ítems. |
 | E3.2 | `E32_persistencia/diseno_persistencia.pdf` + `demo_persistencia.mp4` | Listo. Video de 2 min 18 s con subtítulos y evidencias de DevTools. |
 | E3.3 | `E33_sistema/sistema_diseno.pdf` | Listo. 16 tokens documentados, 4 snippets, 4 prompts CREDA y Lighthouse. |
-| E3.4 | `E34_memoria/memoria.pdf` + `guion_presentacion.pdf` | Listo. Memoria de 12 páginas y guion de 10 minutos. |
+| E3.4 | `E34_memoria/memoria.pdf` + `presentacion_resumia.pptx` + `guion_presentacion_literal.pdf` | Listo. Memoria de 12 páginas, presentación de 9 diapositivas con notas y guion literal. |
 
 ## Evidencias verificadas
 
@@ -29,7 +29,7 @@
    gh project create --owner kanonufo --title "ResumIA - Unidad 3"
    ```
    Luego crea las 8 tarjetas de `issues_y_project.pdf` y vincula los Issues #1–#6.
-2. **Presentación oral de 10 minutos.** El guion está en `E34_memoria/guion_presentacion.pdf`; la exposición debes hacerla tú.
+2. **Presentación oral de 10 minutos.** Abre `E34_memoria/presentacion_resumia.pptx` en Vista → Moderador: cada diapositiva tiene la nota con el texto literal. El mismo texto está en `guion_presentacion_literal.pdf`. La exposición debes hacerla tú.
 3. **Formspree en producción (opcional).** La demo usa `https://httpbin.org/post` para verificar el POST sin cuenta. Para recibir correos reales, cambia `data-endpoint` en `index.html` por `https://formspree.io/f/TU_ID`.
 4. **Video.** Está generado y subtitulado. Si la rúbrica exige que se vea el panel *Application* con las claves completas, vuelve a grabar el segmento con la ventana de DevTools más ancha; en el video actual las claves aparecen truncadas por el ancho del panel.
 

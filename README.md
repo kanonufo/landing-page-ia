@@ -1,4 +1,4 @@
-# ResumIA — Landing page de captura para una beta de IA
+﻿# ResumIA — Landing page de captura para una beta de IA
 
 [![GitHub Pages](https://img.shields.io/badge/GitHub%20Pages-activo-2563eb)](https://kanonufo.github.io/landing-page-ia/)
 [![HTML5](https://img.shields.io/badge/HTML5-sem%C3%A1ntico-e34f26)](https://developer.mozilla.org/es/docs/Web/HTML)
@@ -114,7 +114,7 @@ Los prompts se conservan en [`docs/prompts.md`](docs/prompts.md) y [`docs/unidad
 - **E3.1:** [`informe_auditoria.pdf`](docs/unidad3/E31_auditoria/informe_auditoria.pdf) · [`codigo_original.html`](docs/unidad3/E31_auditoria/codigo_original.html) · [`codigo_corregido.html`](docs/unidad3/E31_auditoria/codigo_corregido.html)
 - **E3.2:** [`diseno_persistencia.pdf`](docs/unidad3/E32_persistencia/diseno_persistencia.pdf) · [`demo_persistencia.mp4`](docs/unidad3/E32_persistencia/demo_persistencia.mp4) · [`guion_video.pdf`](docs/unidad3/E32_persistencia/guion_video.pdf)
 - **E3.3:** [`sistema_diseno.pdf`](docs/unidad3/E33_sistema/sistema_diseno.pdf)
-- **E3.4:** [`memoria.pdf`](docs/unidad3/E34_memoria/memoria.pdf) · [`guion_presentacion.pdf`](docs/unidad3/E34_memoria/guion_presentacion.pdf)
+- **E3.4:** [`memoria.pdf`](docs/unidad3/E34_memoria/memoria.pdf) · [`presentacion_resumia.pptx`](docs/unidad3/E34_memoria/presentacion_resumia.pptx) · [`guion_presentacion_literal.pdf`](docs/unidad3/E34_memoria/guion_presentacion_literal.pdf)
 
 ## Créditos
 

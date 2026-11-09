@@ -1,4 +1,4 @@
-import { chromium } from "playwright";
+﻿import { chromium } from "playwright";
 import { spawnSync } from "node:child_process";
 import { pathToFileURL } from "node:url";
 import fs from "node:fs";
@@ -15,6 +15,7 @@ const docs = [
   ["docs/unidad3/E33_sistema/sistema_diseno.md", "docs/unidad3/E33_sistema/sistema_diseno.pdf"],
   ["docs/unidad3/E34_memoria/memoria.md", "docs/unidad3/E34_memoria/memoria.pdf"],
   ["docs/unidad3/E34_memoria/guion_presentacion.md", "docs/unidad3/E34_memoria/guion_presentacion.pdf"],
+  ["docs/unidad3/E34_memoria/guion_presentacion_literal.md", "docs/unidad3/E34_memoria/guion_presentacion_literal.pdf"],
   ["docs/unidad3/prompts_unidad3.md", "docs/unidad3/prompts_unidad3.pdf"]
 ];
 
