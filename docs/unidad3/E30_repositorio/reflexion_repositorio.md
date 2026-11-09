@@ -5,6 +5,7 @@
 **Proyecto:** ResumIA — landing page de captura de leads para una beta de resúmenes de PDF con IA.
 **Repositorio:** <https://github.com/kanonufo/landing-page-ia>
 **Sitio publicado:** <https://kanonufo.github.io/landing-page-ia/>
+**Tablero Kanban:** <https://github.com/users/kanonufo/projects/3>
 **Nivel:** DoK 4 — Pensamiento extendido.
 
 ## 1. El repositorio como narrativa técnica

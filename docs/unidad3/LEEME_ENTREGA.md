@@ -9,7 +9,7 @@
 |---|---|---|
 | E3.0 | `E30_repositorio/reflexion_repositorio.pdf` y `issues_y_project.pdf` | Listo. Issues #1–#6 creados y cerrados con referencia a commits. |
 | E3.1 | `E31_auditoria/informe_auditoria.pdf` + `codigo_original.html` + `codigo_corregido.html` | Listo. 14 hallazgos, ciclo AVIA, comparación antes/después y protocolo de 12 ítems. |
-| E3.2 | `E32_persistencia/diseno_persistencia.pdf` + `demo_persistencia.mp4` | Listo. Video de 2 min 18 s con subtítulos y evidencias de DevTools. |
+| E3.2 | `E32_persistencia/diseno_persistencia.pdf` + `persistencia.html` + [video](https://kanonufo.github.io/landing-page-ia/docs/unidad3/E32_persistencia/demo_persistencia.mp4) | Listo. Video de 2 min 18 s con subtítulos y evidencias de DevTools. |
 | E3.3 | `E33_sistema/sistema_diseno.pdf` | Listo. 16 tokens documentados, 4 snippets, 4 prompts CREDA y Lighthouse. |
 | E3.4 | `E34_memoria/memoria.pdf` + `presentacion_resumia.pptx` + `guion_presentacion_literal.pdf` + [video](https://youtu.be/RWPANQKzXgY) | Listo. Memoria de 12 páginas, presentación de 14 diapositivas con notas, guion literal y video de la exposición (11:21). |
 
@@ -23,15 +23,16 @@
 
 ## Pendientes que requieren tu cuenta o tu voz
 
-1. **GitHub Project (tablero Kanban).** El token de `gh` no tiene el permiso `project` y GitHub rechazó la creación por API. Ejecuta:
+1. **GitHub Project (tablero Kanban).** Ya está creado con 8 tarjetas en <https://github.com/users/kanonufo/projects/3>. Si quieres que el evaluador lo abra sin iniciar sesión y que aparezca en el repositorio, aplica:
    ```bash
-   gh auth refresh -s project,read:project
-   gh project create --owner kanonufo --title "ResumIA - Unidad 3"
+   gh project edit 3 --owner "@me" --visibility PUBLIC
+   gh project link 3 --owner kanonufo --repo kanonufo/landing-page-ia
    ```
-   Luego crea las 8 tarjetas de `issues_y_project.pdf` y vincula los Issues #1–#6.
+   Si ya lo hiciste, ignora este paso.
 2. **Presentación oral de 10 minutos.** Abre `E34_memoria/presentacion_resumia.pptx` en Vista → Moderador: cada diapositiva tiene la nota con el texto literal. El mismo texto está en `guion_presentacion_literal.pdf`. La exposición debes hacerla tú.
-3. **Formspree en producción (opcional).** La demo usa `https://httpbin.org/post` para verificar el POST sin cuenta. Para recibir correos reales, cambia `data-endpoint` en `index.html` por `https://formspree.io/f/TU_ID`.
-4. **Video.** Está generado y subtitulado. Si la rúbrica exige que se vea el panel *Application* con las claves completas, vuelve a grabar el segmento con la ventana de DevTools más ancha; en el video actual las claves aparecen truncadas por el ancho del panel.
+3. **Video E3.2 ya publicado:** <https://kanonufo.github.io/landing-page-ia/docs/unidad3/E32_persistencia/demo_persistencia.mp4>.
+4. **Formspree en producción (opcional).** La demo usa `https://httpbin.org/post` para verificar el POST sin cuenta. Para recibir correos reales, cambia `data-endpoint` en `index.html` por `https://formspree.io/f/TU_ID`.
+5. **Video.** Está generado y subtitulado. Si la rúbrica exige que se vea el panel *Application* con las claves completas, vuelve a grabar el segmento con la ventana de DevTools más ancha; en el video actual las claves aparecen truncadas por el ancho del panel.
 
 ## Nota sobre el historial
 

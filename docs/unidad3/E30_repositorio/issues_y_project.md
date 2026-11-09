@@ -31,12 +31,13 @@ Los Issues reflejan problemas reales del desarrollo: un 404 que rompía la ilust
 | Contador de cohorte persistente | Completado | La fecha no se reinicia al recargar. |
 | Documentación E3.0–E3.4 y evidencias | Completado | PDFs, capturas y video adjuntos. |
 
-El tablero se mantiene en el repositorio como registro verificable. La creación del Project (v2) en GitHub requiere el permiso `project` del token; el token disponible solo tiene `repo`, `gist`, `read:org` y `workflow`. Por eso el tablero se entrega como tabla y se deja el procedimiento para publicarlo con la cuenta propietaria:
+El tablero está creado y activo en <https://github.com/users/kanonufo/projects/3>, con 8 tarjetas: los Issues #1–#6 y dos borradores (envío POST y contador). Las columnas son `Por hacer`, `En progreso`, `En revisión` y `Completado`.
+
+Para que el evaluador lo abra sin iniciar sesión y aparezca en la pestaña Projects del repositorio, deben quedar aplicados estos dos ajustes:
 
 ```bash
-gh auth refresh -s project,read:project
-gh project create --owner kanonufo --title "ResumIA - Unidad 3"
-gh project item-add <PROJECT_ID> --owner kanonufo --url <URL_DEL_ISSUE>
+gh project edit 3 --owner "@me" --visibility PUBLIC
+gh project link 3 --owner kanonufo --repo kanonufo/landing-page-ia
 ```
 
 ## 3. Historial de commits

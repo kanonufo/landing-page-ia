@@ -112,7 +112,7 @@ Los prompts se conservan en [`docs/prompts.md`](docs/prompts.md) y [`docs/unidad
 
 - **E3.0:** [`reflexion_repositorio.pdf`](docs/unidad3/E30_repositorio/reflexion_repositorio.pdf) · [`issues_y_project.pdf`](docs/unidad3/E30_repositorio/issues_y_project.pdf)
 - **E3.1:** [`informe_auditoria.pdf`](docs/unidad3/E31_auditoria/informe_auditoria.pdf) · [`codigo_original.html`](docs/unidad3/E31_auditoria/codigo_original.html) · [`codigo_corregido.html`](docs/unidad3/E31_auditoria/codigo_corregido.html)
-- **E3.2:** [`diseno_persistencia.pdf`](docs/unidad3/E32_persistencia/diseno_persistencia.pdf) · [`demo_persistencia.mp4`](docs/unidad3/E32_persistencia/demo_persistencia.mp4) · [`guion_video.pdf`](docs/unidad3/E32_persistencia/guion_video.pdf)
+- **E3.2:** [`diseno_persistencia.pdf`](docs/unidad3/E32_persistencia/diseno_persistencia.pdf) · [`persistencia.html`](docs/unidad3/E32_persistencia/persistencia.html) · [video de demostración](https://kanonufo.github.io/landing-page-ia/docs/unidad3/E32_persistencia/demo_persistencia.mp4) · [`guion_video.pdf`](docs/unidad3/E32_persistencia/guion_video.pdf)
 - **E3.3:** [`sistema_diseno.pdf`](docs/unidad3/E33_sistema/sistema_diseno.pdf)
 - **E3.4:** [`memoria.pdf`](docs/unidad3/E34_memoria/memoria.pdf) · [`presentacion_resumia.pptx`](docs/unidad3/E34_memoria/presentacion_resumia.pptx) · [`guion_presentacion_literal.pdf`](docs/unidad3/E34_memoria/guion_presentacion_literal.pdf) · [video de la presentación](https://youtu.be/RWPANQKzXgY)
 

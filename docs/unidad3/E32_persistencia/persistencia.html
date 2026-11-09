@@ -1,0 +1,339 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>ResumIA - Módulo de persistencia (E3.2)</title>
+
+  <!-- Carga de tipografías sin @import bloqueante -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&display=swap">
+
+  <style>
+    :root {
+      --color-primario: #2563eb;
+      --color-primario-oscuro: #1d4ed8;
+      --color-texto: #334155;
+      --color-texto-suave: #475569;
+      --color-fondo: #ffffff;
+      --color-fondo-alt: #f8fafc;
+      --color-borde: #cbd5e1;
+      --color-error: #dc2626;
+      --color-exito: #166534;
+      --radio: 12px;
+      --espacio: 1.25rem;
+    }
+
+    * { box-sizing: border-box; }
+
+    body {
+      margin: 0;
+      padding: 2rem 1.25rem;
+      font-family: Inter, system-ui, Arial, sans-serif;
+      color: var(--color-texto);
+      background: var(--color-fondo-alt);
+    }
+
+    .contenedor { max-width: 520px; margin: 0 auto; }
+    h1 { font-size: 1.75rem; }
+
+    form {
+      padding: var(--espacio);
+      background: var(--color-fondo);
+      border: 1px solid var(--color-borde);
+      border-radius: var(--radio);
+    }
+
+    .campo { margin-bottom: var(--espacio); }
+    label { display: block; margin-bottom: 0.35rem; font-weight: 600; }
+    input, select {
+      width: 100%;
+      padding: 0.7rem 0.85rem;
+      font: inherit;
+      color: var(--color-texto);
+      border: 1.5px solid var(--color-borde);
+      border-radius: 8px;
+    }
+    input:focus, select:focus {
+      outline: 3px solid var(--color-primario);
+      outline-offset: 1px;
+    }
+    [aria-invalid="true"] { border-color: var(--color-error); }
+
+    .error { margin: 0.35rem 0 0; font-size: 0.85rem; color: var(--color-error); }
+    .error::before { content: "⚠ "; }
+
+    .check { display: flex; gap: 0.6rem; align-items: flex-start; }
+    .check input { width: 20px; height: 20px; margin-top: 0.15rem; }
+
+    button {
+      width: 100%;
+      padding: 0.85rem;
+      font: inherit;
+      font-weight: 600;
+      color: #ffffff;
+      background: var(--color-primario);
+      border: 0;
+      border-radius: 999px;
+      cursor: pointer;
+    }
+    button:hover { background: var(--color-primario-oscuro); }
+    button:disabled { opacity: 0.6; cursor: progress; }
+
+    .estado { min-height: 1.4rem; margin: 0.6rem 0 0; font-size: 0.9rem; text-align: center; }
+    .estado[data-estado="error"] { color: var(--color-error); }
+    .estado[data-estado="ok"] { color: var(--color-exito); }
+
+    .exito {
+      padding: var(--espacio);
+      text-align: center;
+      color: var(--color-exito);
+      background: rgba(22, 101, 52, 0.08);
+      border: 1px solid rgba(22, 101, 52, 0.3);
+      border-radius: var(--radio);
+    }
+
+    [hidden] { display: none !important; }
+  </style>
+</head>
+<body>
+  <main class="contenedor">
+    <h1>Módulo de persistencia</h1>
+    <p style="margin-top:-0.5rem;color:#475569">Autoguardado, restauración, envío externo y usuario convertido · E3.2</p>
+
+    <!-- Formulario accesible: etiquetas asociadas y errores descritos -->
+    <form id="formulario" novalidate data-endpoint="https://httpbin.org/post">
+      <div class="campo">
+        <label for="nombre">Nombre *</label>
+        <input type="text" id="nombre" name="nombre" autocomplete="name"
+               required aria-describedby="error-nombre">
+        <p class="error" id="error-nombre" role="alert" hidden></p>
+      </div>
+
+      <div class="campo">
+        <label for="email">Correo electrónico *</label>
+        <input type="email" id="email" name="email" autocomplete="email"
+               required aria-describedby="error-email">
+        <p class="error" id="error-email" role="alert" hidden></p>
+      </div>
+
+      <div class="campo">
+        <label for="rol">Perfil *</label>
+        <select id="rol" name="rol" required aria-describedby="error-rol">
+          <option value="">Selecciona una opción…</option>
+          <option value="estudiante">Estudiante</option>
+          <option value="docente">Docente</option>
+          <option value="profesional">Profesional</option>
+        </select>
+        <p class="error" id="error-rol" role="alert" hidden></p>
+      </div>
+
+      <div class="campo check">
+        <input type="checkbox" id="consentimiento" name="consentimiento"
+               required aria-describedby="error-consentimiento">
+        <label for="consentimiento">Acepto la política de privacidad *</label>
+      </div>
+      <p class="error" id="error-consentimiento" role="alert" hidden></p>
+
+      <button type="submit" id="boton-enviar">Quiero mi acceso</button>
+      <p class="estado" id="estado" role="status" aria-live="polite"></p>
+    </form>
+
+    <div class="exito" id="exito" role="status" tabindex="-1" hidden>
+      <p id="exito-texto"></p>
+      <button type="button" id="reiniciar">Registrar otro correo</button>
+    </div>
+  </main>
+
+  <!-- Script al final del body y dentro de una IIFE -->
+  <script>
+    (function () {
+      "use strict";
+
+      const formulario = document.getElementById("formulario");
+      if (!formulario) return;
+
+      const CLAVES = {
+        nombre: "resumia_form_nombre",
+        email: "resumia_form_email",
+        rol: "resumia_form_rol",
+        consentimiento: "resumia_form_consentimiento"
+      };
+      const CLAVE_CONVERTIDO = "resumia_usuario_convertido";
+      const CLAVE_NOMBRE = "resumia_usuario_nombre";
+      const ENDPOINT = formulario.dataset.endpoint;
+      const MAX_ESPERA_MS = 12000;
+
+      const campos = Array.from(formulario.querySelectorAll("input[name], select[name]"));
+      const estado = document.getElementById("estado");
+      const exito = document.getElementById("exito");
+      const exitoTexto = document.getElementById("exito-texto");
+      const boton = document.getElementById("boton-enviar");
+
+      /* ---------- Almacenamiento seguro ---------- */
+
+      function guardar(clave, valor) {
+        try { localStorage.setItem(clave, valor); } catch (e) { /* modo privado */ }
+      }
+
+      function leer(clave) {
+        try { return localStorage.getItem(clave); } catch (e) { return null; }
+      }
+
+      function borrar(clave) {
+        try { localStorage.removeItem(clave); } catch (e) { /* sin almacenamiento */ }
+      }
+
+      /* ---------- Autoguardado y restauración ---------- */
+
+      function guardarCampo(campo) {
+        const clave = CLAVES[campo.name];
+        if (!clave) return;
+        const valor = campo.type === "checkbox" ? String(campo.checked) : campo.value;
+        guardar(clave, valor);
+      }
+
+      function restaurar() {
+        campos.forEach((campo) => {
+          const clave = CLAVES[campo.name];
+          if (!clave) return;
+          const valor = leer(clave);
+          if (valor === null) return;
+          if (campo.type === "checkbox") campo.checked = valor === "true";
+          else campo.value = valor;
+        });
+      }
+
+      /* ---------- Validación ---------- */
+
+      const reglas = {
+        nombre: (v) => (v.trim().length >= 2 ? null : "Escribe tu nombre (mínimo 2 caracteres)."),
+        email: (v) => (/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(v.trim()) ? null : "Introduce un correo válido."),
+        rol: (v) => (v ? null : "Selecciona tu perfil."),
+        consentimiento: (_v, campo) => (campo.checked ? null : "Debes aceptar la política.")
+      };
+
+      function validarCampo(campo) {
+        const regla = reglas[campo.name];
+        if (!regla) return true;
+
+        const mensaje = regla(campo.value, campo);
+        const caja = document.getElementById(campo.getAttribute("aria-describedby"));
+
+        if (mensaje) {
+          campo.setAttribute("aria-invalid", "true");
+          if (caja) { caja.textContent = mensaje; caja.hidden = false; }
+          return false;
+        }
+
+        campo.removeAttribute("aria-invalid");
+        if (caja) { caja.textContent = ""; caja.hidden = true; }
+        return true;
+      }
+
+      function validarFormulario() {
+        let primero = null;
+        campos.forEach((campo) => {
+          if (!validarCampo(campo) && !primero) primero = campo;
+        });
+        if (primero) { primero.focus(); return false; }
+        return true;
+      }
+
+      /* ---------- Envío real ---------- */
+
+      function avisar(mensaje, tipo) {
+        estado.textContent = mensaje;
+        estado.dataset.estado = tipo || "";
+      }
+
+      async function enviar() {
+        const control = new AbortController();
+        const temporizador = setTimeout(() => control.abort(), MAX_ESPERA_MS);
+
+        try {
+          const respuesta = await fetch(ENDPOINT, {
+            method: "POST",
+            headers: { "Content-Type": "application/json", "Accept": "application/json" },
+            body: JSON.stringify({
+              nombre: document.getElementById("nombre").value.trim(),
+              email: document.getElementById("email").value.trim(),
+              rol: document.getElementById("rol").value,
+              consentimiento: document.getElementById("consentimiento").checked
+            }),
+            signal: control.signal
+          });
+
+          if (!respuesta.ok) throw new Error("HTTP " + respuesta.status);
+          return true;
+        } finally {
+          clearTimeout(temporizador);
+        }
+      }
+
+      async function manejarEnvio(evento) {
+        evento.preventDefault();
+        if (!validarFormulario()) { avisar("Revisa los campos marcados.", "error"); return; }
+
+        boton.disabled = true;
+        boton.textContent = "Enviando…";
+        avisar("Enviando tus datos…", "cargando");
+
+        try {
+          await enviar();
+
+          guardar(CLAVE_CONVERTIDO, "true");
+          guardar(CLAVE_NOMBRE, document.getElementById("nombre").value.trim());
+          Object.values(CLAVES).forEach(borrar);
+
+          const nombre = leer(CLAVE_NOMBRE) || "";
+          // textContent: el nombre nunca se interpreta como HTML.
+          exitoTexto.textContent = "Gracias, " + nombre + ". Tu acceso está reservado.";
+          formulario.hidden = true;
+          exito.hidden = false;
+          exito.focus();
+          avisar("", "");
+        } catch (error) {
+          const mensaje = error.name === "AbortError"
+            ? "El envío tardó demasiado. Inténtalo de nuevo."
+            : "No pudimos enviar tus datos. Revisa tu conexión.";
+          avisar(mensaje, "error");
+          boton.disabled = false;
+          boton.textContent = "Quiero mi acceso";
+        }
+      }
+
+      function reiniciar() {
+        borrar(CLAVE_CONVERTIDO);
+        borrar(CLAVE_NOMBRE);
+        Object.values(CLAVES).forEach(borrar);
+        formulario.reset();
+        formulario.hidden = false;
+        exito.hidden = true;
+        campos.forEach(validarCampo);
+        avisar("", "");
+        boton.disabled = false;
+        boton.textContent = "Quiero mi acceso";
+      }
+
+      /* ---------- Arranque ---------- */
+
+      if (leer(CLAVE_CONVERTIDO) === "true") {
+        const nombre = leer(CLAVE_NOMBRE) || "";
+        exitoTexto.textContent = "Gracias, " + nombre + ". Tu acceso está reservado.";
+        formulario.hidden = true;
+        exito.hidden = false;
+      } else {
+        restaurar();
+        formulario.addEventListener("submit", manejarEnvio);
+        document.getElementById("reiniciar").addEventListener("click", reiniciar);
+        campos.forEach((campo) => {
+          campo.addEventListener("input", () => guardarCampo(campo));
+          campo.addEventListener("change", () => guardarCampo(campo));
+        });
+      }
+    })();
+  </script>
+</body>
+</html>

@@ -126,7 +126,7 @@ La fase de refinamiento fue la más difícil porque obliga a distinguir entre "f
 | Responsive 375/768/1280 | Cumple | Capturas adjuntas. |
 | Lighthouse Performance ≥ 70 | Cumple (97–100) | `lighthouse.json` y captura. |
 | GitHub Pages funcional | Cumple | URL pública en el encabezado. |
-| Repo con 10+ commits, README y Project | Parcial: commits y README; el tablero se documenta y requiere el permiso `project` del token para publicarse por API. | `issues_y_project.md`. |
+| Repo con 10+ commits, README y Project | Cumple: proyecto 3 con 8 tarjetas (6 Issues + 2 borradores). | `issues_y_project.md` y <https://github.com/users/kanonufo/projects/3>. |
 
 ## Presentación grabada
 

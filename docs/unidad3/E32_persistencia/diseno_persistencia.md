@@ -4,7 +4,8 @@
 
 **Producto:** ResumIA — landing de captura para la beta.
 **Implementación:** `assets/js/form-persistence.js`, `assets/js/countdown.js`, `assets/js/core.js`.
-**Demostración:** `demo_persistencia.mp4` (2 min 18 s).
+**Demostración:** [`demo_persistencia.mp4`](https://kanonufo.github.io/landing-page-ia/docs/unidad3/E32_persistencia/demo_persistencia.mp4) (2 min 18 s).
+**Código funcional:** `persistencia.html`.
 **Nivel:** DoK 4 — Pensamiento extendido.
 
 ## 1. Documento de diseño de persistencia
@@ -153,7 +154,7 @@ La prueba automatizada confirmó el estado:
 
 ## 4. Video de demostración
 
-El archivo `demo_persistencia.mp4` dura 2 min 18 s e incluye subtítulos en español. Recorre: (1) la landing y el formulario; (2) el autoguardado campo por campo con el panel Application visible; (3) la recarga con restauración; (4) el envío real y la respuesta del servicio; (5) la limpieza del borrador; (6) la visita posterior con el mensaje de usuario convertido. El guion y las marcas de tiempo están en `guion_video.md`.
+El archivo [`demo_persistencia.mp4`](https://kanonufo.github.io/landing-page-ia/docs/unidad3/E32_persistencia/demo_persistencia.mp4) dura 2 min 18 s e incluye subtítulos en español. También está en el repositorio: <https://github.com/kanonufo/landing-page-ia/blob/master/docs/unidad3/E32_persistencia/demo_persistencia.mp4>. Recorre: (1) la landing y el formulario; (2) el autoguardado campo por campo con el panel Application visible; (3) la recarga con restauración; (4) el envío real y la respuesta del servicio; (5) la limpieza del borrador; (6) la visita posterior con el mensaje de usuario convertido. El guion y las marcas de tiempo están en `guion_video.md`.
 
 ## 5. Conclusión
 
