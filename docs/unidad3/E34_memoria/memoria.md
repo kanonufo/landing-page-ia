@@ -1,4 +1,4 @@
-<div class="portada"><img src="../media/portada_e34.svg" alt="Portada del entregable E3.4"></div>
+﻿<div class="portada"><img src="../media/portada_e34.svg" alt="Portada del entregable E3.4"></div>
 
 # E3.4 — Proyecto Final: landing page completa y memoria reflexiva de proceso
 
@@ -127,6 +127,14 @@ La fase de refinamiento fue la más difícil porque obliga a distinguir entre "f
 | Lighthouse Performance ≥ 70 | Cumple (97–100) | `lighthouse.json` y captura. |
 | GitHub Pages funcional | Cumple | URL pública en el encabezado. |
 | Repo con 10+ commits, README y Project | Parcial: commits y README; el tablero se documenta y requiere el permiso `project` del token para publicarse por API. | `issues_y_project.md`. |
+
+## Presentación grabada
+
+La exposición de 10 minutos se grabó en video y está disponible en:
+
+<https://youtu.be/RWPANQKzXgY>
+
+El video recorre las 14 diapositivas de presentacion_resumia.pptx con la narración del guion literal. Duración: 11 min 21 s.
 
 ## 5. Reflexión final
 

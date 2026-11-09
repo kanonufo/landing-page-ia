@@ -1,4 +1,4 @@
-from pptx import Presentation
+﻿from pptx import Presentation
 import io
 
 PPTX = "docs/unidad3/E34_memoria/presentacion_resumia.pptx"
@@ -47,6 +47,7 @@ partes.append("# Guion literal de la presentación — 10 minutos\n")
 partes.append("**Archivo para proyectar:** `presentacion_resumia.pptx` (14 diapositivas, 16:9).\n")
 partes.append("**Cómo usarlo:** abre el PPTX en PowerPoint y entra en **Presentación → Vista Moderador**. Las notas de cada diapositiva contienen exactamente el texto de este documento.\n")
 partes.append("**Duración objetivo:** 10 minutos 10 segundos, con margen para preguntas.\n")
+partes.append("**Video de la presentación:** <https://youtu.be/RWPANQKzXgY>\n")
 
 for i, slide in enumerate(prs.slides):
     notas = slide.notes_slide.notes_text_frame.text.strip()

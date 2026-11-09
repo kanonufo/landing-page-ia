@@ -11,7 +11,7 @@
 | E3.1 | `E31_auditoria/informe_auditoria.pdf` + `codigo_original.html` + `codigo_corregido.html` | Listo. 14 hallazgos, ciclo AVIA, comparación antes/después y protocolo de 12 ítems. |
 | E3.2 | `E32_persistencia/diseno_persistencia.pdf` + `demo_persistencia.mp4` | Listo. Video de 2 min 18 s con subtítulos y evidencias de DevTools. |
 | E3.3 | `E33_sistema/sistema_diseno.pdf` | Listo. 16 tokens documentados, 4 snippets, 4 prompts CREDA y Lighthouse. |
-| E3.4 | `E34_memoria/memoria.pdf` + `presentacion_resumia.pptx` + `guion_presentacion_literal.pdf` | Listo. Memoria de 12 páginas, presentación de 14 diapositivas con notas y guion literal. |
+| E3.4 | `E34_memoria/memoria.pdf` + `presentacion_resumia.pptx` + `guion_presentacion_literal.pdf` + [video](https://youtu.be/RWPANQKzXgY) | Listo. Memoria de 12 páginas, presentación de 14 diapositivas con notas, guion literal y video de la exposición (11:21). |
 
 ## Evidencias verificadas
 

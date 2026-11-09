@@ -8,6 +8,8 @@
 
 **Duración objetivo:** 10 minutos 10 segundos, con margen para preguntas.
 
+**Video de la presentación:** <https://youtu.be/RWPANQKzXgY>
+
 ## Diapositiva 1 — Portada (0:00–0:30)
 
 **Di exactamente:**
